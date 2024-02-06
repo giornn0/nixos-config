@@ -5,10 +5,10 @@
   ...
 }: {
   imports = [
-    (import ./home-manager/editor.nix {inherit config lib pkgs;})
-    (import ./home-manager/alacritty.nix {inherit config lib pkgs;})
-    (import ./home-manager/helix.nix {inherit config lib pkgs;})
-    (import ./home-manager/zsh.nix {inherit config lib pkgs;})
+    (import ./editor.nix {inherit config lib pkgs;})
+    (import ./alacritty.nix {inherit config lib pkgs;})
+    (import ./helix.nix {inherit config lib pkgs;})
+    (import ./zsh.nix {inherit config lib pkgs;})
   ];
   # TODO please change the username & home direcotry to your own
   home.username = "giornn0";
