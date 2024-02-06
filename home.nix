@@ -31,6 +31,11 @@
     enable = true;
     userName = "giornn0";
     userEmail = "shaaamsuu@gmail.com";
+    # config = {
+    #   init = {
+    #     defaultBranch = "main";
+    #   };
+    # };
   };
 
   # Packages that should be installed to the user profile.
@@ -78,7 +83,6 @@
     nix-output-monitor
 
     # productivity
-    hugo # static site generator
     glow # markdown previewer in terminal
 
     #Terminal
@@ -169,12 +173,13 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
-      upgrade = "sudo nixos-rebuild switch --upgrade-all";
+      update = "sudo nixos-rebuild switch --flake ~/.nixos_config";
+      upgrade = "sudo nixos-rebuild switch --upgrade-all --flake ~/.nixos_config";
+      ls = "eza -l --git -T --hyperlink --header ";
     };
     initExtra = ''
       [[ ! -f ${./.p10k.zsh} ]] || source ${./.p10k.zsh}
+      export TERM=alacritty
 
       bindkey -e
 
@@ -283,8 +288,7 @@
         nil = {
           command = "nil";
           config.nil = {
-            formatting.command = [ "alejandra" "-q" ];
-            nix.flake.autoEvalInputs = true;
+            formatting.command = [ "alejandra" ];
           };
         };
         rust-analyzer = {
