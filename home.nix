@@ -278,8 +278,7 @@
       };
       keys.normal = {
         space.e = "file_picker";
-        space.w = ":w";
-        Ctrl.s = ":w";
+        C-s = ":w";
         space.c = ":bc";
         space.q = ":q";
         esc = ["collapse_selection" "keep_primary_selection"];
