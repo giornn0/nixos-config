@@ -173,8 +173,8 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake ~/.nixos_config";
-      upgrade = "sudo nixos-rebuild switch --upgrade-all --flake ~/.nixos_config";
+      update = "sudo nixos-rebuild switch";
+      upgrade = "sudo nixos-rebuild switch --upgrade-all";
       ls = "eza -l --git -T --hyperlink --header ";
     };
     initExtra = ''
@@ -183,19 +183,19 @@
 
       bindkey -e
 
-      bindkey    "^[[7~"        beginning-of-line
+      bindkey "^[[7~"        beginning-of-line
       bindkey "^[[8~"        end-of-line
-      bindkey    "\e[2~"        overwrite-mode
-      bindkey    "\e[3~"        delete-char
+      bindkey "\e[2~"        overwrite-mode
+      bindkey "\e[3~"        delete-char
       bindkey "^[Od"        backward-word                 
-      bindkey    "\e[1;5D"    backward-word
+      bindkey "\e[1;5D"    backward-word
       bindkey "^[Oc"        forward-word                
-      bindkey    "\e[1;5C"    forward-word
+      bindkey "\e[1;5C"    forward-word
       bindkey "^[[A"         history-search-backward
       bindkey "^[[B"        history-search-forward
-      bindkey    "\e[5~"        history-beginning-search-backward
-      bindkey    "\e[6~"        history-beginning-search-forward
-      bindkey    "^W"        backward-delete-word
+      bindkey "\e[5~"        history-beginning-search-backward
+      bindkey "\e[6~"        history-beginning-search-forward
+      bindkey "^W"        backward-delete-word
       eval "$(zellij setup --generate-auto-start zsh)"
     '';
     zplug = {
@@ -288,7 +288,7 @@
         nil = {
           command = "nil";
           config.nil = {
-            formatting.command = [ "alejandra" ];
+            formatting.command = [ "alejandra" "-q" ];
           };
         };
         rust-analyzer = {
