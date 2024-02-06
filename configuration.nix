@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -22,7 +24,7 @@
     "/crypto_keyfile.bin" = null;
   };
 
-  boot.loader.grub.enableCryptodisk=true;
+  boot.loader.grub.enableCryptodisk = true;
 
   boot.initrd.luks.devices."luks-dacb9835-28e1-41b1-9002-67952a680e5b".keyFile = "/crypto_keyfile.bin";
 
@@ -39,7 +41,7 @@
   # Refer to the following link for more details:
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
-  
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -113,24 +115,23 @@
   users.users.giornn0 = {
     isNormalUser = true;
     description = "giornn0";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
-   git
-   curl
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    curl
   ];
 
-  environment.variables.EDITOR = "hx";
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -164,7 +165,7 @@
     packages = with pkgs; [
       hack-font
       fira-code
-      meslo-lgs-nf 
+      meslo-lgs-nf
       inconsolata
       noto-fonts
       noto-fonts-emoji
@@ -174,8 +175,9 @@
   virtualisation.podman.dockerCompat = true;
   virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
       "intelephense"
       "android-studio-stable"
-  ];
+    ];
 }

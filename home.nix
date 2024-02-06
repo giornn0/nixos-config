@@ -47,11 +47,14 @@
     insomnia
     beekeeper-studio
     telegram-desktop
+    #For android debugging
+    brave
     #Virtualization
     podman
     podman-compose
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
+    neovim
     neofetch
     nnn # terminal file manager
 
@@ -78,6 +81,9 @@
     zstd
     gnupg
 
+    #utils
+    zathura
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`
@@ -95,14 +101,12 @@
 
     #Editor
     lldb
-    luaformatter
     elixir_ls # Elixir
     marksman # Markdown
     ltex-ls
     texlab # LaTeX
     taplo # Toml
     pgformatter
-    nil # Nix
     nodePackages.bash-language-server # Bash
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.stylelint
@@ -111,17 +115,21 @@
     nodePackages.typescript-language-server
     nodePackages.prettier
     nodePackages.yaml-language-server # YAML / JSON
+    yamllint
+    yamlfmt
     tailwindcss-language-server
-    rnix-lsp
-    sumneko-lua-language-server # Lua
+    lua-language-server #LUA
+    stylua
+    selene
     emmet-ls
-    zathura
     # nodePackages.typescript
     gcc
     rustup
+    vimPlugins.crates-nvim
     #Pending to look for an auto install of rust-analyzer
     # rust-analyzer
     alejandra #nix formatter
+    nil
 
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense
@@ -177,11 +185,13 @@
     shellAliases = {
       update = "sudo nixos-rebuild switch";
       upgrade = "sudo nixos-rebuild switch --upgrade-all";
-      ls = "eza -l --git -T --hyperlink --header ";
+      ls = "eza -l --hyperlink --header";
     };
     initExtra = ''
       [[ ! -f ${./.p10k.zsh} ]] || source ${./.p10k.zsh}
       export TERM=alacritty
+
+      zstyle ':completion:*' special-dirs true
 
       bindkey -e
 
@@ -446,7 +456,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
   };
@@ -480,4 +490,6 @@
       '');
     };
   };
+
+  # programs.nvim.extraConfig = lib.fileContents ./nvim/init.lua;
 }
