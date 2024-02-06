@@ -35,7 +35,9 @@
       bindkey "\e[5~"        history-beginning-search-backward
       bindkey "\e[6~"        history-beginning-search-forward
       bindkey "^W"        backward-delete-word
+
       eval "$(zellij setup --generate-auto-start zsh)"
+      eval "$(starship init zsh)"
     '';
     zplug = {
       enable = true;

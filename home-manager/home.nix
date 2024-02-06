@@ -5,9 +5,11 @@
   ...
 }: {
   imports = [
-    (import ./editor.nix {inherit config lib pkgs;})
     (import ./alacritty.nix {inherit config lib pkgs;})
+    (import ./editor.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
+    (import ./starship.nix {inherit config lib pkgs;})
+    (import ./zellij.nix {inherit config lib pkgs;})
     (import ./zsh.nix {inherit config lib pkgs;})
   ];
   # TODO please change the username & home direcotry to your own
@@ -115,20 +117,6 @@
     android-tools
     android-studio
   ];
-
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-
-  #Editor!
 
   home.sessionVariables = {
     EDITOR = "nvim";
