@@ -1,6 +1,9 @@
-{ config, lib, pkgs,  ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # TODO please change the username & home direcotry to your own
   home.username = "giornn0";
   home.homeDirectory = "/home/giornn0";
@@ -65,7 +68,6 @@
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
 
-
     # misc
     file
     which
@@ -113,14 +115,14 @@
     rnix-lsp
     sumneko-lua-language-server # Lua
     emmet-ls
-    zathura 
+    zathura
     # nodePackages.typescript
     gcc
     rustup
     #Pending to look for an auto install of rust-analyzer
     # rust-analyzer
     alejandra #nix formatter
-    
+
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense
     lazygit
@@ -150,23 +152,23 @@
       env.TERM = "xterm-256color";
       font = {
         draw_bold_text_with_bright_colors = true;
-	      normal = {
-	        family = "Hack";
-	        style = "Retina";
-	      };
-	      bold = {
-	        family = "Hack";
-	        style = "Bold";
-	      };
-	      italic = {
-	        family = "Fira Code";
-	      };
+        normal = {
+          family = "Hack";
+          style = "Retina";
+        };
+        bold = {
+          family = "Hack";
+          style = "Bold";
+        };
+        italic = {
+          family = "Fira Code";
+        };
       };
       selection.save_to_clipboard = true;
-      shell.program= "${pkgs.zsh}/bin/zsh";
+      shell.program = "${pkgs.zsh}/bin/zsh";
       window = {
-      	opacity = 0.85;
-	      decorations = "full";
+        opacity = 0.85;
+        decorations = "full";
       };
     };
   };
@@ -187,9 +189,9 @@
       bindkey "^[[8~"        end-of-line
       bindkey "\e[2~"        overwrite-mode
       bindkey "\e[3~"        delete-char
-      bindkey "^[Od"        backward-word                 
+      bindkey "^[Od"        backward-word
       bindkey "\e[1;5D"    backward-word
-      bindkey "^[Oc"        forward-word                
+      bindkey "^[Oc"        forward-word
       bindkey "\e[1;5C"    forward-word
       bindkey "^[[A"         history-search-backward
       bindkey "^[[B"        history-search-forward
@@ -201,24 +203,27 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "zsh-users/zsh-history-substring-search"; } 
-        { name = "zsh-users/zsh-syntax-highlighting"; } 
-        { name = "hlissner/zsh-autopair"; } 
-        { name = "greymd/docker-zsh-completion"; } 
-        { name = "sroze/docker-compose-zsh-plugin"; } 
-        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } 
+        {name = "zsh-users/zsh-autosuggestions";} # Simple plugin installation
+        {name = "zsh-users/zsh-history-substring-search";}
+        {name = "zsh-users/zsh-syntax-highlighting";}
+        {name = "hlissner/zsh-autopair";}
+        {name = "greymd/docker-zsh-completion";}
+        {name = "sroze/docker-compose-zsh-plugin";}
+        {
+          name = "romkatv/powerlevel10k";
+          tags = [as:theme depth:1];
+        }
       ];
     };
   };
 
   #Editor!
-  programs.helix= {
+  programs.helix = {
     enable = true;
     themes = {
       blur_tokyonight_storm = {
         inherits = "tokyonight_storm";
-        "ui.background" = { fg = "foreground"; };
+        "ui.background" = {fg = "foreground";};
       };
     };
     settings = {
@@ -228,7 +233,7 @@
         auto-completion = true;
         auto-format = true;
         bufferline = "multiple";
-        shell = [ "zsh" "-c" ];
+        shell = ["zsh" "-c"];
         rulers = [80];
         true-color = true;
         file-picker = {
@@ -274,21 +279,23 @@
       keys.normal = {
         space.e = "file_picker";
         space.w = ":w";
+        Ctrl.s = ":w";
+        space.c = ":bc";
         space.q = ":q";
-        esc = [ "collapse_selection" "keep_primary_selection" ];
+        esc = ["collapse_selection" "keep_primary_selection"];
       };
     };
     languages = {
       language-server = {
         typescript-language-server = {
           command = "typescript-language-server";
-          args = [ "--stdio" ];
+          args = ["--stdio"];
           config.documentFormatting = false;
         };
         nil = {
           command = "nil";
           config.nil = {
-            formatting.command = [ "alejandra" "-q" ];
+            formatting.command = ["alejandra" "-q"];
           };
         };
         rust-analyzer = {
@@ -296,7 +303,10 @@
             cargo.loadOutDirsFromCheck = true;
             checkOnSave.command = "clippy";
             procMacro.enable = true;
-            lens = { references = true; methodReferences = true; };
+            lens = {
+              references = true;
+              methodReferences = true;
+            };
             completion.autoimport.enable = true;
             experimental.procAttrMacros = true;
           };
@@ -307,76 +317,122 @@
         };
       };
       language = [
-        { 
+        {
           name = "html";
-          formatter = { command = "prettier"; args = ["--write" "--parser" "html"]; };
+          formatter = {
+            command = "prettier";
+            args = ["--write" "--parser" "html"];
+          };
           auto-format = true;
           file-types = ["html"];
           language-servers = ["vscode-html-language-server" "emmet-ls" "tailwindcss-language-server"];
         }
         {
           name = "typescript";
-          formatter = { command = "prettier"; args = [
-            "--write"
-            "--parser"
-            "typescript"
-            ];};
+          formatter = {
+            command = "prettier";
+            args = [
+              "--write"
+              "--parser"
+              "typescript"
+            ];
+          };
           auto-format = true;
           language-servers = ["typescript-language-server" "eslint"];
         }
         {
           name = "javascript";
-          formatter = { command = "prettier"; args = [
-            "--write"
-            "--parser"
-            "javascript"
-            ];};
+          formatter = {
+            command = "prettier";
+            args = [
+              "--write"
+              "--parser"
+              "javascript"
+            ];
+          };
           auto-format = true;
           language-servers = ["typescript-language-server" "eslint"];
         }
-         {
+        {
           name = "tsx";
-          formatter = { command = "prettier"; args = [
-            "--write"
-            "--parser"
-            "tsx"
-            ];};
+          formatter = {
+            command = "prettier";
+            args = [
+              "--write"
+              "--parser"
+              "tsx"
+            ];
+          };
           auto-format = true;
           language-servers = ["typescript-language-server" "eslint"];
         }
-         {
+        {
           name = "jsx";
-          formatter = { command = "prettier"; args = [
-            "--write"
-            "--parser"
-            "jsx"
-            ];};
+          formatter = {
+            command = "prettier";
+            args = [
+              "--write"
+              "--parser"
+              "jsx"
+            ];
+          };
           auto-format = true;
           language-servers = ["typescript-language-server" "eslint"];
         }
-         {
+        {
           name = "jsx";
-          formatter = { command = "prettier"; args = [
-            "--write"
-            "--parser"
-            "typescript"
-            ];};
+          formatter = {
+            command = "prettier";
+            args = [
+              "--write"
+              "--parser"
+              "typescript"
+            ];
+          };
           auto-format = true;
           language-servers = ["typescript-language-server" "eslint"];
-        }        
-        { name = "rust"; auto-format = true; file-types = [ "rs" "rust" ]; language-servers = [ "rust-analyzer" ]; }
+        }
+        {
+          name = "rust";
+          auto-format = true;
+          file-types = ["rs" "rust"];
+          language-servers = ["rust-analyzer"];
+        }
         # { name = "c-sharp"; language-servers = [ "omnisharp" ]; }
-        { name = "sql"; formatter.command = "pg_format"; }
-        { name = "nix"; language-servers = [ "nil" ]; }
-        { name = "json"; language-servers = [{ name = "vscode-json-language-server"; except-features = [ "format" ]; } ]; }
-        { name = "markdown"; language-servers = [{ name = "marksman"; except-features = [ "format" ]; } "ltex-ls" ]; }
+        {
+          name = "sql";
+          formatter.command = "pg_format";
+        }
+        {
+          name = "nix";
+          language-servers = ["nil"];
+        }
+        {
+          name = "json";
+          language-servers = [
+            {
+              name = "vscode-json-language-server";
+              except-features = ["format"];
+            }
+          ];
+        }
+        {
+          name = "markdown";
+          language-servers = [
+            {
+              name = "marksman";
+              except-features = ["format"];
+            }
+            "ltex-ls"
+          ];
+        }
         {
           name = "tailwindcss";
           scope = "source.css";
           injection-regex = "(postcss|css|html)";
           file-types = ["css"];
           roots = ["tailwind.config.js" "tailwind.config.cjs"];
-          language-servers = [ "tailwindcss-language-server" ];
+          language-servers = ["tailwindcss-language-server"];
         }
       ];
     };
@@ -408,4 +464,21 @@
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  systemd.user.services.numLockOnTty = {
+    Unit = {
+      Description = "Auto Num Blq";
+    };
+    Install = {
+      WantedBy = ["multi-user.target"];
+    };
+    Service = {
+      # /run/current-system/sw/bin/setleds -D +num < "$tty";
+      ExecStart = lib.mkForce (pkgs.writeShellScript "numLockOnTty" ''
+        for tty in /dev/tty{1..6}; do
+            ${pkgs.kbd}/bin/setleds -D +num < "$tty";
+        done
+      '');
+    };
+  };
 }
