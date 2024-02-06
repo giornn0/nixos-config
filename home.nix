@@ -301,12 +301,17 @@
             experimental.procAttrMacros = true;
           };
         };
+        tailwindcss-language-server = {
+          command = "tailwindcss-language-server";
+          args = ["-vvv" "--stdio"];
+        };
       };
       language = [
         { 
           name = "html";
           formatter = { command = "prettier"; args = ["--write" "--parser" "html"]; };
           auto-format = true;
+          file-types = ["html"];
           language-servers = ["vscode-html-language-server" "emmet-ls" "tailwindcss-language-server"];
         }
         {
@@ -365,6 +370,14 @@
         { name = "nix"; language-servers = [ "nil" ]; }
         { name = "json"; language-servers = [{ name = "vscode-json-language-server"; except-features = [ "format" ]; } ]; }
         { name = "markdown"; language-servers = [{ name = "marksman"; except-features = [ "format" ]; } "ltex-ls" ]; }
+        {
+          name = "tailwindcss";
+          scope = "source.css";
+          injection-regex = "(postcss|css|html)";
+          file-types = ["css"];
+          roots = ["tailwind.config.js" "tailwind.config.cjs"];
+          language-servers = [ "tailwindcss-language-server" ];
+        }
       ];
     };
   };
