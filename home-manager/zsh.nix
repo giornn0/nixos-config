@@ -15,7 +15,8 @@
       ls = "eza -l --hyperlink --header";
     };
     initExtra = ''
-      [[ ! -f ${./.p10k.zsh} ]] || source ${./.p10k.zsh}
+      # Uncomment here if not using starship and want a fast style
+      # [[ ! -f ${./.p10k.zsh} ]] || source ${./.p10k.zsh}
       export TERM=alacritty
 
       zstyle ':completion:*' special-dirs true
@@ -36,8 +37,6 @@
       bindkey "\e[6~"        history-beginning-search-forward
       bindkey "^W"        backward-delete-word
 
-      eval "$(zellij setup --generate-auto-start zsh)"
-      eval "$(starship init zsh)"
     '';
     zplug = {
       enable = true;
@@ -48,10 +47,11 @@
         {name = "hlissner/zsh-autopair";}
         {name = "greymd/docker-zsh-completion";}
         {name = "sroze/docker-compose-zsh-plugin";}
-        {
-          name = "romkatv/powerlevel10k";
-          tags = [as:theme depth:1];
-        }
+        #For fast style use powerlevel - for more control config starship
+        # {
+        #   name = "romkatv/powerlevel10k";
+        #   tags = [as:theme depth:1];
+        # }
       ];
     };
   };

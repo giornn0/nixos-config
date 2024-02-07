@@ -13,11 +13,11 @@
       font = {
         draw_bold_text_with_bright_colors = true;
         normal = {
-          family = "Hack";
+          family = "Fira Code";
           style = "Retina";
         };
         bold = {
-          family = "Hack";
+          family = "Fira Code";
           style = "Bold";
         };
         italic = {

@@ -35,6 +35,7 @@
     # rust-analyzer
     alejandra #nix formatter
     nil
+    tree-sitter
   ];
 
   # ......

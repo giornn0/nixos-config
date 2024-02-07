@@ -165,6 +165,8 @@
     packages = with pkgs; [
       hack-font
       fira-code
+      fira-code-symbols
+      # caskaydia-cove-nerd-font
       meslo-lgs-nf
       inconsolata
       noto-fonts
