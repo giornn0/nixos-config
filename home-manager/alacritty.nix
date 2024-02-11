@@ -21,7 +21,7 @@
           style = "Bold";
         };
         italic = {
-          family = "Fira Code";
+          family = "Mononoki Nerd Font";
         };
       };
       selection.save_to_clipboard = true;

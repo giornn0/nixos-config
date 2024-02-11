@@ -166,6 +166,7 @@
       hack-font
       fira-code
       fira-code-symbols
+      mononoki
       # caskaydia-cove-nerd-font
       meslo-lgs-nf
       inconsolata

@@ -42,11 +42,13 @@
     enable = true;
     userName = "giornn0";
     userEmail = "shaaamsuu@gmail.com";
-    # config = {
-    #   init = {
-    #     defaultBranch = "main";
-    #   };
-    # };
+    extraConfig = {
+      push = {autoSetupRemote = true;};
+      pull = {rebase = false;};
+      commit = {
+        # gpgsign = true;
+      };
+    };
   };
 
   # Packages that should be installed to the user profile.
@@ -112,6 +114,8 @@
 
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense
+    php
+    php82Packages.composer
 
     #Android
     android-tools
@@ -140,6 +144,14 @@
   systemd.user.startServices = "sd-switch";
 
   home.stateVersion = "23.11";
+
+  # services = {
+  #   gpg-agent = {
+  #     enable = true;
+  #     defaultCacheTtl = 1800;
+  #     enableSshSupport = true;
+  #   };
+  # };
 
   systemd.user.services.numLockOnTty = {
     Unit = {
