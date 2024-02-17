@@ -25,7 +25,7 @@
         };
       };
       selection.save_to_clipboard = true;
-      shell.program = "${pkgs.ion}/bin/ion";
+      shell.program = "${pkgs.nushell}/bin/nushell";
       window = {
         opacity = 0.85;
         decorations = "full";

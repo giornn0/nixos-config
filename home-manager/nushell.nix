@@ -4,6 +4,10 @@
   pkgs,
   ...
 }: {
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
   # ......
   programs.ion = {
     enable = true;
@@ -13,10 +17,10 @@
       nixos-optimise = "nix-store --optimise";
       nixos-cleanup = "nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory|/proc)\"";
       ls = "eza -l --hyperlink --header";
-      cd = "z";
+      # cd = "z";
     };
     initExtra = ''
-      eval $(starship init ion)
+      zellij
     '';
   };
   # ......
