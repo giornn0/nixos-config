@@ -25,7 +25,10 @@
         };
       };
       selection.save_to_clipboard = true;
-      shell.program = "${pkgs.nushell}/bin/nushell";
+      shell = {
+        program = "${pkgs.nushell}/bin/nu";
+        # args = ["options" "--default-shell" "nu"];
+      };
       window = {
         opacity = 0.85;
         decorations = "full";

@@ -9,7 +9,7 @@
     enable = true;
     settings = {
       theme = "tokyonight_storm";
-      default_shell = "zsh";
+      default_shell = "nu";
     };
   };
 

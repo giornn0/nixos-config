@@ -8,7 +8,7 @@
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
-    (import ./ion.nix {inherit config lib pkgs;})
+    (import ./nushell.nix {inherit config lib pkgs;})
     (import ./starship.nix {inherit config lib pkgs;})
     (import ./zellij.nix {inherit config lib pkgs;})
   ];
