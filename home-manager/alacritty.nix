@@ -25,7 +25,7 @@
         };
       };
       selection.save_to_clipboard = true;
-      shell.program = "${pkgs.zsh}/bin/zsh";
+      shell.program = "${pkgs.ion}/bin/ion";
       window = {
         opacity = 0.85;
         decorations = "full";

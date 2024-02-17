@@ -8,9 +8,9 @@
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
+    (import ./ion.nix {inherit config lib pkgs;})
     (import ./starship.nix {inherit config lib pkgs;})
     (import ./zellij.nix {inherit config lib pkgs;})
-    (import ./zsh.nix {inherit config lib pkgs;})
   ];
   # TODO please change the username & home direcotry to your own
   home.username = "giornn0";
@@ -81,6 +81,7 @@
     yq-go # yaml processer https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    zoxide # A modern replacement for cd
 
     # misc
     file
@@ -106,7 +107,6 @@
 
     #Terminal
     xclip
-    zplug
     #CLI
     yarn
     rustup
