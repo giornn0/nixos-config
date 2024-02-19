@@ -111,6 +111,7 @@
     yarn
     rustup
     lazygit
+    sea-orm-cli
 
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense

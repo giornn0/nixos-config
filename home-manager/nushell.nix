@@ -25,10 +25,13 @@
       */
       ls = "eza -l --hyperlink --header";
       cd = "z";
-      exit = "podman stop --all and exit";
+      exit-work = "podman stop --all and exit";
     };
     extraEnv = ''
       $env.config.show_banner = false
+      $env.EDITOR = "nvim";
+      $env.BROWSER = "firefox";
+      $env.TERMINAL = "alacritty";
     '';
   };
   # ......
