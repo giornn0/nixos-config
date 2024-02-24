@@ -82,6 +82,7 @@
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     zoxide # A modern replacement for cd
+    fd # A modern replacement for find
 
     # misc
     file
@@ -112,15 +113,16 @@
     rustup
     lazygit
     sea-orm-cli
+    nodejs-slim_20
 
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense
     php
-    php82Packages.composer
+    #php82Packages.composer
 
     #Android
-    android-tools
-    android-studio
+    #android-tools
+    #android-studio
   ];
 
   home.sessionVariables = {

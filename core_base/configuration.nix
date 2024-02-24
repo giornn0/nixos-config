@@ -181,6 +181,6 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "intelephense"
-      "android-studio-stable"
+      # "android-studio-stable"
     ];
 }

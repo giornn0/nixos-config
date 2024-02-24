@@ -20,6 +20,7 @@
     # nodePackages.svelte-language-server # Svelte
     nodePackages.vscode-langservers-extracted
     nodePackages.typescript-language-server
+    eslint_d
     nodePackages.prettier
     nodePackages.yaml-language-server # YAML / JSON
     yamllint
