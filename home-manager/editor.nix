@@ -14,6 +14,7 @@
     texlab # LaTeX
     taplo # Toml
     pgformatter
+    markdownlint-cli
     nodePackages.bash-language-server # Bash
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.stylelint
@@ -22,6 +23,7 @@
     nodePackages.typescript-language-server
     eslint_d
     nodePackages.prettier
+    biome
     nodePackages.yaml-language-server # YAML / JSON
     yamllint
     yamlfmt
