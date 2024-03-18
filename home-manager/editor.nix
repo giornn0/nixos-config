@@ -13,14 +13,17 @@
     ltex-ls
     texlab # LaTeX
     taplo # Toml
+    postgres-lsp
+    shfmt
     pgformatter
     markdownlint-cli
     nodePackages.bash-language-server # Bash
     nodePackages.dockerfile-language-server-nodejs
-    nodePackages.stylelint
     # nodePackages.svelte-language-server # Svelte
-    nodePackages.vscode-langservers-extracted
+    nodePackages.graphql-language-service-cli
+    nodePackages.stylelint
     nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted
     eslint_d
     nodePackages.prettier
     biome

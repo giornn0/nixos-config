@@ -83,7 +83,7 @@
     fzf # A command-line fuzzy finder
     zoxide # A modern replacement for cd
     fd # A modern replacement for find
-
+    git-cliff #A modern changelog prettier
     # misc
     file
     which
@@ -106,6 +106,9 @@
     # productivity
     glow # markdown previewer in terminal
 
+    #INFO: For RDP
+    remmina
+
     #Terminal
     xclip
     #CLI
@@ -114,21 +117,25 @@
     lazygit
     sea-orm-cli
     nodejs-slim_20
-
+    #TODO: move to use in nix-shell
+    nodePackages.npm
+    nodePackages.eas-cli
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense
     php
     #php82Packages.composer
-
     #Android
-    #android-tools
-    #android-studio
+    android-tools
+    android-studio
+    jdk17
+    #INFO: Extras needs
   ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
+    # ANDROID_HOME = "/home/giornn0/Android/Sdk";
   };
 
   # This value determines the home Manager release that your

@@ -18,6 +18,7 @@
     enable = true;
     shellAliases = {
       os-update = "sudo nixos-rebuild switch";
+      os-clean = "sudo nix-collect-garbage --delete-older-than 1d";
       upgrade = "sudo nixos-rebuild switch --upgrade-all";
       nixos-optimise = "nix-store --optimise";
       /*
@@ -28,7 +29,7 @@
       exit-work = "podman stop --all and exit";
     };
     extraEnv = ''
-      $env.config.show_banner = false
+      $env.config.show_banner = false;
       $env.EDITOR = "nvim";
       $env.BROWSER = "firefox";
       $env.TERMINAL = "alacritty";
