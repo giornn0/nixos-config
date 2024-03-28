@@ -42,6 +42,7 @@
     alejandra #nix formatter
     nil
     tree-sitter
+    zls
   ];
 
   # ......

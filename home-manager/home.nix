@@ -84,6 +84,7 @@
     zoxide # A modern replacement for cd
     fd # A modern replacement for find
     git-cliff #A modern changelog prettier
+    killport #An option to kill process on specific ports
     # misc
     file
     which
@@ -117,6 +118,7 @@
     lazygit
     sea-orm-cli
     nodejs-slim_20
+    zig
     #TODO: move to use in nix-shell
     nodePackages.npm
     nodePackages.eas-cli
@@ -129,6 +131,7 @@
     android-studio
     jdk17
     #INFO: Extras needs
+    mold
   ];
 
   home.sessionVariables = {
