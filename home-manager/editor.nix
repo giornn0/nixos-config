@@ -43,6 +43,9 @@
     nil
     tree-sitter
     zls
+    #PHP
+    nodePackages.intelephense
+    php83Packages.php-cs-fixer
   ];
 
   # ......
