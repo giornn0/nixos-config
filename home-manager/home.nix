@@ -132,6 +132,7 @@
     jdk17
     #INFO: Extras needs
     mold
+    nodePackages.live-server
   ];
 
   home.sessionVariables = {
