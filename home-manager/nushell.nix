@@ -33,6 +33,7 @@
       $env.EDITOR = "nvim";
       $env.BROWSER = "firefox";
       $env.TERMINAL = "alacritty";
+      $env.PATH = ($env.PATH | split row (char esep) | append '${config.home.homeDirectory}/.cargo/bin')
     '';
   };
   # ......

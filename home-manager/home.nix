@@ -116,7 +116,6 @@
     yarn
     rustup
     lazygit
-    sea-orm-cli
     nodejs-slim_20
     zig
     #TODO: move to use in nix-shell
