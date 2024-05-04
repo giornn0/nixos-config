@@ -27,7 +27,7 @@
   boot.loader.grub.enableCryptodisk = true;
 
   boot.initrd.luks.devices."luks-dacb9835-28e1-41b1-9002-67952a680e5b".keyFile = "/crypto_keyfile.bin";
-
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
     automatic = true;
