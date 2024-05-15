@@ -8,7 +8,7 @@
   home.packages = with pkgs; [
     #Editor
     lldb
-    elixir_ls # Elixir
+    elixir-ls # Elixir
     marksman # Markdown
     ltex-ls
     texlab # LaTeX
@@ -44,6 +44,9 @@
     tree-sitter
     zls
     #PHP
+    #TODO: Move towards nix-shell file
+    # vscode-extensions.ms-vscode.cpptools
+    # rr
     nodePackages.intelephense
     php83Packages.php-cs-fixer
   ];

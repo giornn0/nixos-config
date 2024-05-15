@@ -41,7 +41,7 @@
   programs.git = {
     enable = true;
     userName = "giornn0";
-    userEmail = "shaaamsuu@gmail.com";
+    userEmail = "rusty.arrebol@proton.me";
     extraConfig = {
       push = {autoSetupRemote = true;};
       pull = {rebase = false;};
@@ -109,7 +109,7 @@
 
     #INFO: For RDP
     remmina
-
+    krita
     #Terminal
     xclip
     #CLI
@@ -119,6 +119,8 @@
     nodejs-slim_20
     zig
     #TODO: move to use in nix-shell
+    gleam
+    elixir
     nodePackages.npm
     nodePackages.eas-cli
     #Pending delete to avoid unfree licenses
@@ -130,8 +132,8 @@
     android-studio
     jdk17
     #INFO: Extras needs
-    mold
-    nodePackages.live-server
+    # mold
+    livebook
   ];
 
   home.sessionVariables = {
