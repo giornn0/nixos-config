@@ -125,8 +125,6 @@
     nodePackages.eas-cli
     #Pending delete to avoid unfree licenses
     nodePackages.intelephense
-    php
-    #php82Packages.composer
     #Android
     android-tools
     android-studio
