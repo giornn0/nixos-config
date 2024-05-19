@@ -8,6 +8,7 @@
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
+    # (import ./hyprland.nix {inherit config lib pkgs;})
     (import ./nushell.nix {inherit config lib pkgs;})
     (import ./starship.nix {inherit config lib pkgs;})
     (import ./zellij.nix {inherit config lib pkgs;})
@@ -123,12 +124,14 @@
     #INFO: Extras needs
     mold
     livebook
+    # direnv
   ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
+    NIX_BUILD_SHELL = "nu";
     # ANDROID_HOME = "/home/giornn0/Android/Sdk";
   };
 
@@ -156,7 +159,7 @@
   #     enableSshSupport = true;
   #   };
   # };
-
+  # services.lorri.enable = true;
   systemd.user.services.numLockOnTty = {
     Unit = {
       Description = "Auto Num Blq";

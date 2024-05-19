@@ -1,11 +1,16 @@
-#TODO:this shell allows to install rust crates that needs openssl
-{pkgs ? import <nixpkgs> {}}:
+#TODO:this shell allows access to standard php utils
+{
+  pkgs ?
+    import <nixpkgs> {
+      config.allowUnfree = true;
+    },
+}:
 with pkgs;
   mkShell rec {
     nativeBuildInputs = [pkg-config];
     buildInputs = [
       php
-      php82Packages.composer
+      php83Packages.composer
       nodePackages.intelephense
       php83Packages.php-cs-fixer
     ];
