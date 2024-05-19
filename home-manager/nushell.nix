@@ -31,15 +31,15 @@
       */
       ls = "eza -l --hyperlink --header";
       cd = "z";
-      exit-work = "podman stop --all and exit";
+      exit = "podman stop --all; exit;";
     };
     extraEnv = ''
       $env.config.show_banner = false;
-      # $env.config.hooks = {
-      #   env_change : {PWD : { || if (which direnv | is-empty) { return }
-      #       direnv export json | from json | default {} | load-env
-      #   }}
-      # };
+      $env.config.hooks = {
+        env_change : {PWD : { || if (which direnv | is-empty) { return }
+            direnv export json | from json | default {} | load-env
+        }}
+      };
       $env.EDITOR = "nvim";
       $env.BROWSER = "firefox";
       $env.TERMINAL = "alacritty";
