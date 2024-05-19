@@ -10,7 +10,6 @@
     # There are many ways to reference flake inputs.
     # The most widely used is `github:owner/name/reference`,
     # which represents the GitHub repository URL + branch/commit-id/tag.
-
     # Official NixOS package source, using nixos-23.11 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     # home-manager, used for managing user configuration
@@ -22,7 +21,8 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # neovim.url = "github:neovim/neovim/stable";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim.url = "github:neovim/neovim?dir=contrib";
     #helix.url = "github:helix-editor/helix/master";
   };
 
@@ -41,7 +41,11 @@
     nixpkgs,
     home-manager,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+    ];
+  in {
     nixosConfigurations = {
       # By default, NixOS will try to refer the nixosConfiguration with
       # its hostname, so the system named `nixos-test` will use this one.
@@ -56,7 +60,6 @@
       #   sudo nixos-rebuild switch --flake .#nixos-test
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
         # The Nix module system can modularize configuration,
         # improving the maintainability of configuration.
         #
@@ -108,6 +111,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
+            nixpkgs.overlays = overlays;
             home-manager.users.giornn0 = import ./home-manager/home.nix;
           }
         ];
