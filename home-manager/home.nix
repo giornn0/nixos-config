@@ -64,7 +64,7 @@
     podman-compose
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
-    neovim
+    # neovim
     neofetch
     nnn # terminal file manager
     gcc
@@ -116,21 +116,12 @@
     yarn
     rustup
     lazygit
-    nodejs-slim_20
     zig
-    #TODO: move to use in nix-shell
     gleam
     elixir
-    nodePackages.npm
-    nodePackages.eas-cli
-    #Pending delete to avoid unfree licenses
-    nodePackages.intelephense
-    #Android
-    android-tools
-    android-studio
-    jdk17
+    erlang
     #INFO: Extras needs
-    # mold
+    mold
     livebook
   ];
 

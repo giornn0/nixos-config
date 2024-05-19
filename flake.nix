@@ -22,6 +22,7 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # neovim.url = "github:neovim/neovim/stable";
     #helix.url = "github:helix-editor/helix/master";
   };
 

@@ -4,10 +4,14 @@
   pkgs,
   ...
 }: {
+  programs.neovim = {
+    enable = true;
+  };
   # ......
   home.packages = with pkgs; [
     #Editor
     lldb
+    erlang-ls
     elixir-ls # Elixir
     marksman # Markdown
     ltex-ls
@@ -43,12 +47,6 @@
     nil
     tree-sitter
     zls
-    #PHP
-    #TODO: Move towards nix-shell file
-    # vscode-extensions.ms-vscode.cpptools
-    # rr
-    nodePackages.intelephense
-    php83Packages.php-cs-fixer
   ];
 
   # ......

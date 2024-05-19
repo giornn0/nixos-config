@@ -4,9 +4,8 @@ with pkgs;
   mkShell rec {
     nativeBuildInputs = [pkg-config];
     buildInputs = [
-      php
-      php82Packages.composer
-      nodePackages.intelephense
-      php83Packages.php-cs-fixer
+      android-tools
+      android-studio
+      jdk17
     ];
   }

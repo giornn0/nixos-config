@@ -4,9 +4,8 @@ with pkgs;
   mkShell rec {
     nativeBuildInputs = [pkg-config];
     buildInputs = [
-      php
-      php82Packages.composer
-      nodePackages.intelephense
-      php83Packages.php-cs-fixer
+      nodejs-slim_20
+      nodePackages.npm
+      nodePackages.eas-cli
     ];
   }
