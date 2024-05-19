@@ -6,6 +6,8 @@
 }: {
   programs.neovim = {
     enable = true;
+    vimAlias = true;
+    viAlias = true;
   };
   # ......
   home.packages = with pkgs; [
