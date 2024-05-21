@@ -114,6 +114,7 @@
   users.users.giornn0 = {
     isNormalUser = true;
     description = "giornn0";
+    shell = pkgs.nushell;
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
