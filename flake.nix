@@ -105,7 +105,8 @@
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
           ./core_base/configuration.nix
-          ./hyprland.nix
+          ./hyprland/default.nix
+          ./session/default.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

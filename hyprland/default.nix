@@ -18,6 +18,13 @@
   };
 
   services.getty.autologinUser = "giornn0";
+
+  #INFO: Env Needed
+  environment.systemPackages = with pkgs; [
+    hyprpaper
+    wl-clipboard
+  ];
+
   hardware = {
     opengl.enable = true;
     # nvidia.modesetting.enable = true;
@@ -29,13 +36,5 @@
     xwayland.enable = true;
     # nvidiaPatches = true;
   };
-  #INFO: Clipboard
-  programs.wofi.enable = true;
-  programs.wl-clipboard.enable = true;
-  programs.cliphist.enable = true;
-
-  #INFO: Utils
-  programs.waybar.enable = true;
-  programs.hyprpaper.enable = true;
   # ......
 }
