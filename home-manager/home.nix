@@ -7,6 +7,7 @@
   imports = [
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
+    (import ../hyprland/settings.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
     (import ./lorri.nix {inherit config lib pkgs;})
     (import ./nushell.nix {inherit config lib pkgs;})
@@ -112,7 +113,7 @@
     remmina
     krita
     #Terminal
-    xclip
+    # xclip
     #CLI
     yarn
     rustup

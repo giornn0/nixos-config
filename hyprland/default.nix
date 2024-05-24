@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./settings.nix
-  ];
+  # imports = [
+  #   ./settings.nix
+  # ];
   # ......
   services.xserver = {
     enable = true;
@@ -17,14 +17,14 @@
     };
   };
 
-  services.getty.autologinUser = "giornn0";
+  # services.getty.autologinUser = "giornn0";
 
   #INFO: Env Needed
-  environment.systemPackages = with pkgs; [
-    hyprpaper
-    wl-clipboard
-  ];
-
+  # environment.systemPackages = with pkgs; [
+  #   hyprpaper
+  #   wl-clipboard
+  # ];
+  #
   hardware = {
     opengl.enable = true;
     # nvidia.modesetting.enable = true;
