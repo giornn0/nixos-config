@@ -71,9 +71,6 @@
     LC_TIME = "es_AR.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
@@ -127,6 +124,22 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  #INFO: Need for Hyprland
+  hardware.opengl = {
+    enable = true;
+    # if you also want 32-bit support (e.g for Steam)
+    # driSupport32Bit = true;
+    # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  };
+
+  services.xserver = {
+    enable = true;
+    # videosDrivers = ["nvidia"];
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

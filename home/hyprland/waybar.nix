@@ -146,7 +146,6 @@
         modules-left = [
           "custom/launcher"
           "temperature"
-          "mpd"
           "custom/cava-internal"
         ];
         modules-center = [

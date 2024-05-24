@@ -7,14 +7,15 @@
   userName = "giornn0";
 in {
   imports = [
+    ./hyprland/default.nix
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
-    (import ../hyprland/settings.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
     (import ./lorri.nix {inherit config lib pkgs;})
     (import ./nushell.nix {inherit config lib pkgs;})
+    (import ./scripts.nix {inherit config lib pkgs;})
+    (import ./rofi/default.nix {inherit config lib pkgs;})
     (import ./starship.nix {inherit config lib pkgs;})
-    (import ./zellij.nix {inherit config lib pkgs;})
   ];
   # TODO please change the username & home direcotry to your own
   home.username = userName;
@@ -101,7 +102,7 @@ in {
 
     #utils
     zathura
-
+    tty-clock
     # nix related
     #
     # it provides the command `nom` works just like `nix`
@@ -136,6 +137,15 @@ in {
     TERMINAL = "alacritty";
     NIX_BUILD_SHELL = "nu";
     # ANDROID_HOME = "/home/giornn0/Android/Sdk";
+    __GL_VRR_ALLOWED = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+    CLUTTER_BACKEND = "wayland";
+    WLR_RENDERER = "vulkan";
+
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
   };
 
   # This value determines the home Manager release that your
