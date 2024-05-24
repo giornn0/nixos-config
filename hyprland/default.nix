@@ -17,7 +17,7 @@
     };
   };
 
-  # services.getty.autologinUser = "giornn0";
+  services.getty.autologinUser = "giornn0";
 
   #INFO: Env Needed
   # environment.systemPackages = with pkgs; [
@@ -25,16 +25,19 @@
   #   wl-clipboard
   # ];
   #
-  hardware = {
-    opengl.enable = true;
-    # nvidia.modesetting.enable = true;
-  };
+  hardware.opengl = {
+    enable = true;
 
+    # if you also want 32-bit support (e.g for Steam)
+    # driSupport32Bit = true;
+    # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  };
   # hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # nvidiaPatches = true;
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+  environment.variables.NIXOS_OZONE_WL = "1";
   # ......
 }

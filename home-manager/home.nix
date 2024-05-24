@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  userName = "giornn0";
+in {
   imports = [
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
@@ -15,8 +17,8 @@
     (import ./zellij.nix {inherit config lib pkgs;})
   ];
   # TODO please change the username & home direcotry to your own
-  home.username = "giornn0";
-  home.homeDirectory = "/home/giornn0";
+  home.username = userName;
+  home.homeDirectory = "/home/${userName}";
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -42,7 +44,7 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "giornn0";
+    userName = userName;
     userEmail = "rusty.arrebol@proton.me";
     extraConfig = {
       push = {autoSetupRemote = true;};

@@ -141,11 +141,13 @@
       hack-font
       fira-code
       fira-code-symbols
+      material-symbols
       mononoki
       # caskaydia-cove-nerd-font
       meslo-lgs-nf
       inconsolata
       noto-fonts
+      noto-fonts-cjk
       noto-fonts-emoji
     ];
   };

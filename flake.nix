@@ -12,6 +12,12 @@
     # which represents the GitHub repository URL + branch/commit-id/tag.
     # Official NixOS package source, using nixos-23.11 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -99,7 +105,7 @@
         # you must use `specialArgs` by uncomment the following line:
         #
         # pass custom arguments into all sub module.
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
@@ -111,7 +117,6 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
             nixpkgs.overlays = overlays;
             home-manager.users.giornn0 = import ./home-manager/home.nix;
           }
