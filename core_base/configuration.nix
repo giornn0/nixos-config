@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./fonts.nix
   ];
 
   # Bootloader.
@@ -134,23 +135,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  fonts = {
-    fontDir.enable = true;
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      hack-font
-      fira-code
-      fira-code-symbols
-      material-symbols
-      mononoki
-      # caskaydia-cove-nerd-font
-      meslo-lgs-nf
-      inconsolata
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-    ];
-  };
   virtualisation.podman.enable = true;
   virtualisation.podman.dockerCompat = true;
   virtualisation.podman.defaultNetwork.settings.dns_enabled = true;

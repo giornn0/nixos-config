@@ -25,6 +25,7 @@
     curl
     hyprpaper
     wl-clipboard
+    libsForQt5.dolphin
   ];
 
   # ......
