@@ -42,12 +42,18 @@
 
 
           # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-          exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          # Execute your favorite apps at launch
+          # Fix slow startup
+          # exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+          # exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+          #Clipboard
           exec-once = wl-clipboard-history -t
           exec-once = wl-paste --watch cliphist store
           exec-once = rm "$HOME/.cache/cliphist/db"   #it'll delete history at every restart
-          exec-once = waybar & hyprpaper & firefox
+
+          #Startup
+          exec-once = pkill waybar
+          exec-once = swww init & sleep 0.5 && exec wallpaper_random
+          exec-once = waybar & firefox
 
 
           # Source a file (multi-file configs)
@@ -138,7 +144,7 @@
 
           misc {
               # See https://wiki.hyprland.org/Configuring/Variables/ for more
-              force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
+              # force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
           }
 
           # Example per-device config
@@ -148,15 +154,24 @@
           }
 
           # Example windowrule v1
-          # windowrule = float, ^(kitty)$
+          # windowrule = float, ^(alacritty)$
           # Example windowrule v2
           windowrulev2 = float,class:^(alacritty)$,title:^(alacritty)$
+
+          windowrule=float,^(alacritty)$
+          # windowrule=float,^(pavucontrol)$
+          windowrule=center,^(alacritty)$
+          # windowrule=float,^(blueman-manager)$
+          windowrule=size 600 500,^(alacritty)$
+          # windowrule=size 934 525,^(mpv)$
+          # windowrule=float,^(mpv)$
+          # windowrule=center,^(mpv)$
           # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
 
           # See https://wiki.hyprland.org/Configuring/Keywords/ for more
           $mainMod = SUPER
-
+          bind = $mainMod, G, fullscreen,
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           bind = $mainMod, Q, exec, alacritty
           bind = $mainMod, C, killactive,
@@ -211,7 +226,6 @@
           bindm = $mainMod, mouse:273, resizewindow
           # Clipboard bind
           bind=SUPER,SPACE,exec,cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy
-
     '';
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };

@@ -173,20 +173,14 @@ in {
   #   };
   # };
   # services.lorri.enable = true;
-  systemd.user.services.numLockOnTty = {
-    Unit = {
-      Description = "Auto Num Blq";
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
-    Install = {
-      WantedBy = ["multi-user.target"];
-    };
-    Service = {
-      # /run/current-system/sw/bin/setleds -D +num < "$tty";
-      ExecStart = lib.mkForce (pkgs.writeShellScript "numLockOnTty" ''
-        for tty in /dev/tty{1..6}; do
-            ${pkgs.kbd}/bin/setleds -D +num < "$tty";
-        done
-      '');
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Tokyonight-Dark-B-LB";
     };
   };
 }
