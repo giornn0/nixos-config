@@ -8,6 +8,7 @@
   #INFO: Utils
   imports = [
     ./waybar.nix
+    ./utils.nix
   ];
   #INFO: Clipboard
   programs.wofi.enable = true;
@@ -17,7 +18,6 @@
     swww
   ];
   wayland.windowManager.hyprland.systemd.variables = ["--all"];
-
   # hyprland
   wayland.windowManager.hyprland = {
     enable = true;
@@ -51,7 +51,6 @@
           exec-once = rm "$HOME/.cache/cliphist/db"   #it'll delete history at every restart
 
           #Startup
-          exec-once = pkill waybar
           exec-once = swww init & sleep 0.5 && exec wallpaper_random
           exec-once = waybar & firefox
 
@@ -149,9 +148,9 @@
 
           # Example per-device config
           # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-          device:epic-mouse-v1 {
-              sensitivity = -0.5
-          }
+          # device:epic-mouse-v1 {
+          #     sensitivity = -0.5
+          # }
 
           # Example windowrule v1
           # windowrule = float, ^(alacritty)$
@@ -178,10 +177,12 @@
           bind = $mainMod, M, exit,
           bind = $mainMod, E, exec, nautilus
           bind = $mainMod, V, togglefloating,
-          bind = $mainMod, R, exec, wofi --show drun
           bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, J, togglesplit, # dwindle
-          # bind = $mainMod, I, firefox, # internet
+          bind = $mainMod, I, exec, firefox, # internet
+          bind = $mainMod, T, exec, wofi --show drun
+          bind = $mainMod, R, exec, rofiWindow
+          bind = $mainMod, w, exec, wallpaper_random
 
           # Move focus with mainMod + arrow keys
           bind = $mainMod, H, movefocus, l
