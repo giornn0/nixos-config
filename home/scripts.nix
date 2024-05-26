@@ -20,6 +20,16 @@
         -show drun \
         -theme "$HOME/.config/rofi/theme.rasi"
   '';
+  killXDG_Desktops = pkgs.writeShellScriptBin "killXDG_Desktops" ''
+    #!/usr/bin/env bash
+    sleep 1
+    killall -e xdg-desktop-portal-hyprland
+    killall -e xdg-desktop-portal-wlr
+    killall xdg-desktop-portal
+    ${pkgs.xdg-desktop-portal-hyprland} &
+    sleep 2
+    ${pkgs.xdg-desktop-portal}  &
+  '';
   wallpaper_random = pkgs.writeShellScriptBin "wallpaper_random" ''
     if command -v swww >/dev/null 2>&1; then
         killall dynamic_wallpaper
@@ -39,5 +49,6 @@ in {
     wallpaper_random
     default_wall
     cava-internal
+    killXDG_Desktops
   ];
 }

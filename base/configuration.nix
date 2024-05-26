@@ -91,14 +91,16 @@ in {
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
+    wireplumber = {
+      enable = true;
+      configPackages = [];
+    };
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -121,7 +123,6 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # environment.variables.NIXOS_OZONE_WL = "1";
   # services.xserver = {
   #   enable = true;
   #   # videosDrivers = ["nvidia"];

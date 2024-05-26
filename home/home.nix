@@ -141,9 +141,9 @@ in {
     __GL_VRR_ALLOWED = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
+    NIXOS_OZONE_WL = "1";
+    # WLR_RENDERER = "vulkan";
     CLUTTER_BACKEND = "wayland";
-    WLR_RENDERER = "vulkan";
-
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
     QT_QPA_PLATFORM = "wayland";
@@ -167,23 +167,4 @@ in {
   systemd.user.startServices = "sd-switch";
 
   home.stateVersion = "23.11";
-
-  # services = {
-  #   gpg-agent = {
-  #     enable = true;
-  #     defaultCacheTtl = 1800;
-  #     enableSshSupport = true;
-  #   };
-  # };
-  # services.lorri.enable = true;
-
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  #
-  #   "org/gnome/shell/extensions/user-theme" = {
-  #     name = "Tokyonight-Dark-B-LB";
-  #   };
-  # };
 }

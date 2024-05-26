@@ -18,7 +18,6 @@
   # hyprland
   wayland.windowManager.hyprland = {
     enable = true;
-    # systemdIntegration = true;
     xwayland.enable = true;
     extraConfig = ''
       ########################################################################################
@@ -41,6 +40,7 @@
           # To allow screensharing
           # exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
           # Fix slow startup
+          exec-once =  killXDG_Desktops
           exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
           exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
           # Locker
@@ -167,11 +167,11 @@
           # windowrule=float,^(mpv)$
           # windowrule=center,^(mpv)$
           # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-          # windowrulev2 = opacity 0.0 override,class:^(xwaylandvideobridge)$
-          # windowrulev2 = noanim,class:^(xwaylandvideobridge)$
-          # windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
-          # windowrulev2 = maxsize 1 1,class:^(xwaylandvideobridge)$
-          # windowrulev2 = noblur,class:^(xwaylandvideobridge)$
+          windowrulev2 = opacity 0.0 override,class:^(xwaylandvideobridge)$
+          windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+          windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
+          windowrulev2 = maxsize 1 1,class:^(xwaylandvideobridge)$
+          windowrulev2 = noblur,class:^(xwaylandvideobridge)$
 
 
           # See https://wiki.hyprland.org/Configuring/Keywords/ for more
@@ -247,6 +247,8 @@
 
           #Lock session
           bind = $mainMod, X, exec, loginctl lock-session
+          #Clean middle click paste (check how to allow the new tab)
+          bind = , mouse:274, exec, ;
     '';
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };

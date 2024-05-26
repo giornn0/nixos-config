@@ -224,7 +224,7 @@
         };
         "custom/powermenu" = {
           "format" = "";
-          "on-click" = "pkill rofi || ~/.config/rofi/powermenu/type-3/powermenu.sh";
+          "on-click" = "wleave";
           "tooltip" = false;
         };
         "tray" = {
