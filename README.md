@@ -17,8 +17,9 @@ sudo cp /etc/nixos/hardware-configuration.nix ~/nixos_config
 ```
 
 Then setup the symlink with this folder:
+
 ```
-sudo rm /etc/nixos && sudo ln -s ~/.nixos_config /etc/nixos 
+sudo rm /etc/nixos && sudo ln -s ~/.nixos_config /etc/nixos
 ```
 
 After setting up all the files run:
@@ -29,3 +30,4 @@ sudo nixos-rebuild switch
 
 If everything runs fine, you can run the cmd: update whenever you want to change the configuration
 
+Regarding Hyprland setup, some inspiration was taken from [@HeinzDev](https://github.com/HeinzDev/Hyprland-dotfiles) and [@fufexan](https://github.com/fufexan/dotfiles/tree/main/home) dotfiles.
