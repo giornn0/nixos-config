@@ -8,6 +8,7 @@
 in {
   imports = [
     ./hyprland/default.nix
+    ./themes/default.nix
     (import ./alacritty.nix {inherit config lib pkgs;})
     (import ./editor.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
@@ -145,6 +146,8 @@ in {
 
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
+    QT_QPA_PLATFORM = "wayland";
+    SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
   };
 
@@ -174,13 +177,13 @@ in {
   # };
   # services.lorri.enable = true;
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark-B-LB";
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  #
+  #   "org/gnome/shell/extensions/user-theme" = {
+  #     name = "Tokyonight-Dark-B-LB";
+  #   };
+  # };
 }

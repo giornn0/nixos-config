@@ -10,9 +10,6 @@
     ./waybar.nix
     ./utils.nix
   ];
-  #INFO: Clipboard
-  programs.wofi.enable = true;
-  services.cliphist.enable = true;
   home.packages = with pkgs; [
     waybar
     swww
@@ -40,12 +37,16 @@
           # See https://wiki.hyprland.org/Configuring/Monitors/
           monitor=,preferred,auto,auto
 
-
           # See https://wiki.hyprland.org/Configuring/Keywords/ for more
+          # To allow screensharing
+          # exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
           # Fix slow startup
-          # exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          # exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          #Clipboard
+          exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+          exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+          # Locker
+          exec-once = hyprlock
+
+          # Setup clipboard handler
           exec-once = wl-clipboard-history -t
           exec-once = wl-paste --watch cliphist store
           exec-once = rm "$HOME/.cache/cliphist/db"   #it'll delete history at every restart
@@ -155,7 +156,7 @@
           # Example windowrule v1
           # windowrule = float, ^(alacritty)$
           # Example windowrule v2
-          windowrulev2 = float,class:^(alacritty)$,title:^(alacritty)$
+          # windowrulev2 = float,class:^(alacritty)$,title:^(alacritty)$
 
           windowrule=float,^(alacritty)$
           # windowrule=float,^(pavucontrol)$
@@ -166,6 +167,11 @@
           # windowrule=float,^(mpv)$
           # windowrule=center,^(mpv)$
           # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+          # windowrulev2 = opacity 0.0 override,class:^(xwaylandvideobridge)$
+          # windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+          # windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
+          # windowrulev2 = maxsize 1 1,class:^(xwaylandvideobridge)$
+          # windowrulev2 = noblur,class:^(xwaylandvideobridge)$
 
 
           # See https://wiki.hyprland.org/Configuring/Keywords/ for more
@@ -226,10 +232,23 @@
           bindm = $mainMod, mouse:272, movewindow
           bindm = $mainMod, mouse:273, resizewindow
           # Clipboard bind
-          bind=SUPER,SPACE,exec,cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy
+          bind = SUPER,SPACE,exec,cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy
+
+          # screenshot
+          # # area
+          bind = , Print, exec, grimblast --notify copysave area
+          bind = $mainMod SHIFT, R, exec, grimblast --notify copysave area
+          # current screen
+          bind = CTRL, Print, exec, grimblast --notify --cursor copysave output
+          bind = $mainMod SHIFT CTRL, R, exec, grimblast --notify --cursor copysave output
+          # all screens
+          bind = ALT, Print, exec, grimblast --notify --cursor copysave screen
+          bind = $mainMod SHIFT ALT, R, exec, grimblast --notify --cursor copysave screen
+
+          #Lock session
+          bind = $mainMod, X, exec, loginctl lock-session
     '';
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
-  # environment.variables.NIXOS_OZONE_WL = "1";
   # ......
 }

@@ -6,7 +6,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -76,12 +78,6 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "latam";
-    xkbVariant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "la-latin1";
 
@@ -125,6 +121,17 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # environment.variables.NIXOS_OZONE_WL = "1";
+  # services.xserver = {
+  #   enable = true;
+  #   # videosDrivers = ["nvidia"];
+  #   displayManager.gdm = {
+  #     enable = true;
+  #     wayland = true;
+  #   };
+  #    layout = "latam";
+  #    xkbVariant = "";
+  # };
   #INFO: Need for Hyprland
   hardware.opengl = {
     enable = true;
@@ -133,14 +140,31 @@
     # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
 
-  services.xserver = {
+  services.greetd = {
     enable = true;
-    # videosDrivers = ["nvidia"];
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    settings = {
+      default_session = {
+        command = "${tuigreet} --time --remember --cmd Hyprland";
+        user = "giornn0";
+      };
     };
   };
+
+  # this is a life saver.
+  # literally no documentation about this anywhere.
+  # might be good to write about this...
+  # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal"; # Without this errors will spam on screen
+    # Without these bootlogs will spam on screen
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
