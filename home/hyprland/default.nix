@@ -8,6 +8,7 @@
   #INFO: Utils
   imports = [
     ./waybar.nix
+    ./hyprlock.nix
     ./utils.nix
   ];
   home.packages = with pkgs; [
@@ -43,8 +44,10 @@
           exec-once =  killXDG_Desktops
           exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
           exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+          exec-once = systemctl --user start xdg-desktop-portal-gtk
+          exec-once = systemctl --user start xdg-desktop-portal-hyprland
           # Locker
-          exec-once = hyprlock
+          # exec-once = hyprlock
 
           # Setup clipboard handler
           exec-once = wl-clipboard-history -t
@@ -184,17 +187,18 @@
           bind = $mainMod, E, exec, nautilus
           bind = $mainMod, V, togglefloating,
           bind = $mainMod, P, pseudo, # dwindle
-          bind = $mainMod, J, togglesplit, # dwindle
+          bind = $mainMod, O, togglesplit, # dwindle
           bind = $mainMod, I, exec, firefox, # internet
           bind = $mainMod, T, exec, wofi --show drun
-          bind = $mainMod, R, exec, rofiWindow
+          bind = $mainMod, R, exec, rofiWindow  movefocus, u
+          bind = $mainMod, R, movefocus, u
           bind = $mainMod, w, exec, wallpaper_random
 
           # Move focus with mainMod + arrow keys
           bind = $mainMod, H, movefocus, l
           bind = $mainMod, L, movefocus, r
-          bind = $mainMod, up, movefocus, u
-          bind = $mainMod, down, movefocus, d
+          bind = $mainMod, J, movefocus, u
+          bind = $mainMod, K, movefocus, d
 
           # Switch workspaces with mainMod + [0-9]
           bind = $mainMod, 1, workspace, 1

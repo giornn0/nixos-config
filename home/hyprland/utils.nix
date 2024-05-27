@@ -27,6 +27,7 @@
 
     #XDG Desktop
     xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
 
     #Audio
     pamixer
@@ -39,5 +40,35 @@
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 16;
+  };
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
+
+    iconTheme = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "Sans";
+      size = 11;
+    };
   };
 }

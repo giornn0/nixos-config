@@ -140,6 +140,7 @@ in {
     # driSupport32Bit = true;
     # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
+  programs.dconf.enable = true;
 
   services.greetd = {
     enable = true;

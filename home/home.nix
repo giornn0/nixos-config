@@ -50,7 +50,7 @@ in {
     userEmail = "rusty.arrebol@proton.me";
     extraConfig = {
       push = {autoSetupRemote = true;};
-      pull = {rebase = false;};
+      pull = {rebase = true;};
       commit = {
         # gpgsign = true;
       };
@@ -79,7 +79,6 @@ in {
     zip
     xz
     unzip
-    p7zip
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
@@ -100,10 +99,8 @@ in {
     gawk
     zstd
     gnupg
+    krita
 
-    #utils
-    zathura
-    tty-clock
     # nix related
     #
     # it provides the command `nom` works just like `nix`
@@ -115,11 +112,12 @@ in {
 
     #INFO: For RDP
     remmina
-    krita
-    #Terminal
-    # xclip
+
     #CLI
     yarn
+    nodejs
+    corepack
+    nodePackages.npm
     rustup
     lazygit
     zig
@@ -129,7 +127,6 @@ in {
     #INFO: Extras needs
     mold
     livebook
-    # direnv
   ];
 
   home.sessionVariables = {
@@ -166,5 +163,5 @@ in {
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }
