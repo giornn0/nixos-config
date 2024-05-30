@@ -189,10 +189,11 @@
           bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, O, togglesplit, # dwindle
           bind = $mainMod, I, exec, firefox, # internet
+          bind = $mainMod, X, exec, wleave, # session
           bind = $mainMod, T, exec, wofi --show drun
           bind = $mainMod, R, exec, rofiWindow  movefocus, u
           bind = $mainMod, R, movefocus, u
-          bind = $mainMod, w, exec, wallpaper_random
+          bind = $mainMod, W, exec, wallpaper_random
 
           # Move focus with mainMod + arrow keys
           bind = $mainMod, H, movefocus, l
@@ -249,8 +250,6 @@
           bind = ALT, Print, exec, grimblast --notify --cursor copysave screen
           bind = $mainMod SHIFT ALT, R, exec, grimblast --notify --cursor copysave screen
 
-          #Lock session
-          bind = $mainMod, X, exec, loginctl lock-session
           #Clean middle click paste (check how to allow the new tab)
           bind = , mouse:274, exec, ;
     '';

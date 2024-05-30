@@ -36,13 +36,13 @@ in {
           check_color = "rgb(204, 136, 34)";
           fail_color = "rgb(204, 34, 34)"; # if authentication failed, changes outer_color and fail message color
           fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>"; # can be set to empty
-          fail_transition = 300; # transition time in ms between normal outer_color and fail_color
+          fail_transition = 150; # transition time in ms between normal outer_color and fail_color
           capslock_color = -1;
           numlock_color = -1;
           bothlock_color = -1; # when both locks are active. -1 means don't change outer color (same for above)
           invert_numlock = false; # change color if numlock is off
           swap_font_color = false; # see below
-          position = "0, -20";
+          position = "0, -80";
           halign = "center";
           valign = "center";
         };
@@ -57,7 +57,7 @@ in {
         font_family = "${font_family}";
         shadow_passes = 5;
         shadow_size = 10;
-        position = "0, 80";
+        position = "0, 120";
         valign = "center";
         halign = "center";
       }
@@ -69,7 +69,7 @@ in {
         font_family = "${font_family}";
         shadow_passes = 5;
         shadow_size = 10;
-        position = "0, 40";
+        position = "0, 65";
         valign = "center";
         halign = "center";
       }

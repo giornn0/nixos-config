@@ -28,8 +28,10 @@
     # nodePackages.svelte-language-server # Svelte
     nodePackages.graphql-language-service-cli
     nodePackages.stylelint
-    nodePackages.typescript-language-server
+    # nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
+    # nodePackages."@vtsls/language-server"
+    # nodePackages."@angular/language-server"
     eslint_d
     nodePackages.prettier
     biome
@@ -50,6 +52,5 @@
     tree-sitter
     zls
   ];
-
   # ......
 }
