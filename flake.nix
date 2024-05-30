@@ -13,7 +13,7 @@
     # Official NixOS package source, using nixos-23.11 branch here
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprlock = {
     #   url = "github:hyprwm/hyprlock";
     #   inputs.hyprlang.follows = "hyprland/hyprlang";
