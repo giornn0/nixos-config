@@ -32,28 +32,22 @@
     #Audio
     pamixer
     cava
+
+    #To allow screen sharing
+    xwayland
+    # meson
+    wayland-protocols
+    wayland-utils
+    wlroots
   ];
 
   home.pointerCursor = {
     gtk.enable = true;
-    # x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 16;
   };
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
-    };
 
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
   gtk = {
     enable = true;
     theme = {

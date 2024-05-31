@@ -161,6 +161,22 @@ in {
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
   };
+  #For screen sharing
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
