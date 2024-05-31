@@ -17,7 +17,10 @@
     waybar
     swww
   ];
-  wayland.windowManager.hyprland.systemd.variables = ["--all"];
+  wayland.windowManager.hyprland.systemd = {
+    # enable = true;
+    variables = ["--all"];
+  };
   # hyprland
   wayland.windowManager.hyprland = {
     enable = true;
@@ -191,11 +194,10 @@
           bind = $mainMod, V, togglefloating,
           bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, O, togglesplit, # dwindle
-          bind = $mainMod, I, exec, firefox, # internet
-          bind = $mainMod, X, exec, wleave, # session
+          bind = $mainMod, I, exec, firefox # internet
+          bind = $mainMod, X, exec, wleave # session
           bind = $mainMod, T, exec, wofi --show drun
-          bind = $mainMod, R, exec, rofiWindow  movefocus, u
-          bind = $mainMod, R, movefocus, u
+          bind = $mainMod, R, exec, rofiWindow
           bind = $mainMod, W, exec, wallpaper_random
 
           # Move focus with mainMod + arrow keys

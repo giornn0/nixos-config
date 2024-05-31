@@ -7,12 +7,6 @@
   cava-internal = pkgs.writeShellScriptBin "cava-internal" ''
     cava -p ~/.config/cava/config1 | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
   '';
-  rofi1 = pkgs.writeShellScriptBin "rofi1" ''
-    ~/.config/rofi/launchers/type-1/launcher.sh
-  '';
-  rofi2 = pkgs.writeShellScriptBin "rofi2" ''
-    ~/.config/rofi/launchers/type-2/launcher.sh
-  '';
   rofiWindow = pkgs.writeShellScriptBin "rofiWindow" ''
     #!/usr/bin/env bash
     ## Run
@@ -42,9 +36,7 @@
     fi
   '';
 in {
-  home.packages = with pkgs; [
-    rofi1
-    rofi2
+  home.packages = [
     rofiWindow
     wallpaper_random
     default_wall
