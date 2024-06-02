@@ -12,7 +12,7 @@
     # which represents the GitHub repository URL + branch/commit-id/tag.
     # Official NixOS package source, using nixos-23.11 branch here
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprlock = {
     #   url = "github:hyprwm/hyprlock";
