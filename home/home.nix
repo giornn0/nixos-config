@@ -99,6 +99,9 @@ in {
     gawk
     zstd
     gnupg
+
+    #utils
+    unetbootin
     krita
 
     # nix related
@@ -114,27 +117,29 @@ in {
     remmina
 
     #CLI
-    yarn
+    # yarn
+    yarn-berry
     nodejs
-    corepack
     nodePackages.npm
+
     rustup
     lazygit
+    #Zig
     zig
+    #Elixir
     gleam
     elixir
     erlang
     #INFO: Extras needs
     mold
     livebook
+    devenv
   ];
-
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
     NIX_BUILD_SHELL = "nu";
-    # ANDROID_HOME = "/home/giornn0/Android/Sdk";
     __GL_VRR_ALLOWED = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";

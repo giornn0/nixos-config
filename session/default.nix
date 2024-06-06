@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: {
+  programs.adb.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -11,7 +12,7 @@
     isNormalUser = true;
     description = "giornn0";
     shell = pkgs.nushell;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "adbusers" "kvm" "plugdev"];
     packages = with pkgs; [
       firefox
     ];
