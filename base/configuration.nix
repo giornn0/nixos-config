@@ -17,20 +17,11 @@ in {
   ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.systemd-boot.configurationLimit = 10;
 
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-
-  boot.loader.grub.enableCryptodisk = true;
-
-  boot.initrd.luks.devices."luks-dacb9835-28e1-41b1-9002-67952a680e5b".keyFile = "/crypto_keyfile.bin";
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
@@ -81,9 +72,6 @@ in {
   # Configure console keymap
   console.keyMap = "la-latin1";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -104,16 +92,6 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # services.xserver = {
-  #   enable = true;
-  #   # videosDrivers = ["nvidia"];
-  #   displayManager.gdm = {
-  #     enable = true;
-  #     wayland = true;
-  #   };
-  #    layout = "latam";
-  #    xkbVariant = "";
-  # };
   #INFO: Need for Hyprland
   hardware.opengl = {
     enable = true;
