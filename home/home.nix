@@ -117,9 +117,8 @@ in {
     remmina
 
     #CLI
-    # yarn
-    yarn-berry
-    nodejs
+    nodejs-slim
+    nodePackages.pnpm
     nodePackages.npm
 
     rustup
@@ -133,7 +132,6 @@ in {
     #INFO: Extras needs
     mold
     livebook
-    devenv
   ];
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -157,7 +155,6 @@ in {
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
   # incompatible changes.
-  #
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
