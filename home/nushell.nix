@@ -31,15 +31,15 @@
       */
       ls = "eza -l --hyperlink --header";
       cd = "z";
-      exit = "podman stop --all; exit;";
+      exit-pd = "podman stop --all";
     };
     extraEnv = ''
-      $env.config.show_banner = false;
       $env.config.hooks = {
         env_change : {PWD : { || if (which direnv | is-empty) { return }
             direnv export json | from json | default {} | load-env
         }}
       };
+      $env.config = ($env.config | upsert show_banner false)
       $env.EDITOR = "nvim";
       $env.BROWSER = "firefox";
       $env.TERMINAL = "alacritty";
@@ -47,8 +47,7 @@
           | append '${config.home.homeDirectory}/.cargo/bin'
           | append '${config.home.homeDirectory}/.npm/bin'
           | uniq);
-
-
+      neofetch
     '';
   };
   # ......

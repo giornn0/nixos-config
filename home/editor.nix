@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     #Editor
     lldb
+    hadolint
     erlang-ls
     elixir-ls # Elixir
     marksman # Markdown

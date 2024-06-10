@@ -13,6 +13,7 @@ in {
     (import ./editor.nix {inherit config lib pkgs;})
     (import ./helix.nix {inherit config lib pkgs;})
     (import ./lorri.nix {inherit config lib pkgs;})
+    (import ./neofetch.nix {inherit config lib pkgs;})
     (import ./nushell.nix {inherit config lib pkgs;})
     (import ./scripts.nix {inherit config lib pkgs;})
     (import ./rofi/default.nix {inherit config lib pkgs;})
@@ -72,7 +73,6 @@ in {
     # feel free to add your own or remove some of them
     # neovim
     neofetch
-    nnn # terminal file manager
     gcc
 
     # archives
