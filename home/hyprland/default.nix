@@ -158,11 +158,11 @@
           # Example windowrule v2
           # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
-          windowrule=float,^(kitty)$
+          # windowrule=float,^(kitty)$
           # windowrule=float,^(pavucontrol)$
-          windowrule=center,^(kitty)$
+          # windowrule=center,^(kitty)$
           # windowrule=float,^(blueman-manager)$
-          windowrule=size 600 500,^(kitty)$
+          # windowrule=size 600 500,^(kitty)$
           # windowrule=size 934 525,^(mpv)$
           # windowrule=float,^(mpv)$
           # windowrule=center,^(mpv)$
@@ -178,18 +178,18 @@
           $mainMod = SUPER
           bind = $mainMod, G, fullscreen,
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-          bind = $mainMod, Q, exec,kitty,
+          bind = $mainMod, Q, exec, kitty
           bind = $mainMod, C, killactive,
           bind = $mainMod, M, exit,
-          bind = $mainMod, E, exec, nautilus,
+          bind = $mainMod, E, exec, nautilus
           bind = $mainMod, V, togglefloating,
           bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, O, togglesplit, # dwindle
-          bind = $mainMod, I, exec, firefox, # internet
-          bind = $mainMod, X, exec, wleave, # session
-          bind = $mainMod, T, exec, wofi, --show drun
-          bind = $mainMod, R, exec, rofiWindow,
-          bind = $mainMod, W, exec, wallpaper_random,
+          bind = $mainMod, I, exec, firefox # internet
+          bind = $mainMod, X, exec, wleave # session
+          bind = $mainMod, T, exec, wofi --show drun
+          bind = $mainMod, R, exec, rofiWindow
+          bind = $mainMod, W, exec, wallpaper_random
 
           # Move focus with mainMod + arrow keys
           bind = $mainMod, H, movefocus, l

@@ -47,7 +47,7 @@
       cursor #8fee96
 
       term xterm-256color
-      background_opacity 0.85
+      background_opacity 0.8
 
       color0 #000000
       color8 #44475a
