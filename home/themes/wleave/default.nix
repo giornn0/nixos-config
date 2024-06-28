@@ -22,7 +22,7 @@ in {
     }
     {
         "label" : "shutdown",
-        "action" : "systemctl poweroff",
+        "action" : "podman stop --all && systemctl poweroff",
         "text" : "Shutdown",
         "keybind" : "s"
     }

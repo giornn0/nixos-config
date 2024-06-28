@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ config, lib, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     vimAlias = true;
@@ -43,12 +38,12 @@
     yamllint
     yamlfmt
     tailwindcss-language-server
-    lua-language-server #LUA
+    lua-language-server # LUA
     stylua
     selene
     emmet-ls
     vimPlugins.crates-nvim
-    alejandra #nix formatter
+    haskellPackages.nixfmt
     nil
     tree-sitter
     zls
