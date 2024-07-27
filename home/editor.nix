@@ -50,6 +50,9 @@
 
     #TODO: Pending to look for an auto install of rust-analyzer
     # rust-analyzer
+    #
+    luajitPackages.luarocks
+    haskellPackages.haskell-language-server
   ];
   # ......
 }

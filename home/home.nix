@@ -1,23 +1,18 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
-  userName = "giornn0";
+{ config, lib, pkgs, ... }:
+let userName = "giornn0";
 in {
   imports = [
     ./hyprland/default.nix
     ./themes/default.nix
-    (import ./alacritty.nix {inherit config lib pkgs;})
-    (import ./editor.nix {inherit config lib pkgs;})
-    (import ./helix.nix {inherit config lib pkgs;})
-    (import ./lorri.nix {inherit config lib pkgs;})
-    (import ./neofetch.nix {inherit config lib pkgs;})
-    (import ./nushell.nix {inherit config lib pkgs;})
-    (import ./scripts.nix {inherit config lib pkgs;})
-    (import ./rofi/default.nix {inherit config lib pkgs;})
-    (import ./starship.nix {inherit config lib pkgs;})
+    (import ./alacritty.nix { inherit config lib pkgs; })
+    (import ./editor.nix { inherit config lib pkgs; })
+    (import ./helix.nix { inherit config lib pkgs; })
+    (import ./lorri.nix { inherit config lib pkgs; })
+    (import ./neofetch.nix { inherit config lib pkgs; })
+    (import ./nushell.nix { inherit config lib pkgs; })
+    (import ./scripts.nix { inherit config lib pkgs; })
+    (import ./rofi/default.nix { inherit config lib pkgs; })
+    (import ./starship.nix { inherit config lib pkgs; })
   ];
   # TODO please change the username & home direcotry to your own
   home.username = userName;
@@ -50,8 +45,8 @@ in {
     userName = userName;
     userEmail = "rusty.arrebol@proton.me";
     extraConfig = {
-      push = {autoSetupRemote = true;};
-      pull = {rebase = true;};
+      push = { autoSetupRemote = true; };
+      pull = { rebase = true; };
       commit = {
         # gpgsign = true;
       };
@@ -88,8 +83,8 @@ in {
     fzf # A command-line fuzzy finder
     zoxide # A modern replacement for cd
     fd # A modern replacement for find
-    git-cliff #A modern changelog prettier
-    killport #An option to kill process on specific ports
+    git-cliff # A modern changelog prettier
+    killport # An option to kill process on specific ports
     # misc
     file
     which
@@ -129,6 +124,10 @@ in {
     gleam
     elixir
     erlang
+    #Haskell
+    ghc # Glasgow Haskell Compiler
+    haskellPackages.cabal-install
+    # haskellPackages.ghcup
     #INFO: Extras needs
     mold
     livebook
