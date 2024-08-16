@@ -47,12 +47,13 @@
     nil
     tree-sitter
     zls
-
     #TODO: Pending to look for an auto install of rust-analyzer
     # rust-analyzer
     #
     luajitPackages.luarocks
+    #Haskell
     haskellPackages.haskell-language-server
+    haskellPackages.cabal-gild
   ];
   # ......
 }

@@ -124,6 +124,9 @@ in {
     gleam
     elixir
     erlang
+    #INFO: need for distillery builds
+    # gnumake
+    inotify-tools
     #Haskell
     ghc # Glasgow Haskell Compiler
     haskellPackages.cabal-install
