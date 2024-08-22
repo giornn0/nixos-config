@@ -51,3 +51,8 @@ npm -g @angular/language-server
 
 The possible command will be available because there is already configured the directory
 $HOME/.npm in the shell PATH.
+
+## Update
+
+For package version update, use `nix flake update`
+Otherwise for general changes, use `os-update`
