@@ -46,7 +46,6 @@
   # inputs's parameter, making it convenient to use inside the function.
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
       lib = nixpkgs.lib;
@@ -65,7 +64,6 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              nixpkgs.overlays = overlays;
               home-manager.users.giornn0 = import ./home/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
             }

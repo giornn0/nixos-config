@@ -1,8 +1,9 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   programs.neovim = {
     enable = true;
     vimAlias = true;
     viAlias = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
   # ......
   home.packages = with pkgs; [

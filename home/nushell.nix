@@ -20,6 +20,7 @@
       os-update = "sudo nixos-rebuild switch";
       os-clean = "sudo nix-collect-garbage --delete-older-than 1d";
       upgrade = "sudo nixos-rebuild switch --upgrade-all";
+      flake-upgrade = "sudo nix flake update";
       nixos-optimise = "nix-store --optimise";
       php-open = "nix-shell ~/.nixos_config/shell.php.nix";
       android-open = "nix-shell ~/.nixos_config/shell.android.nix";
