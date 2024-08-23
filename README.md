@@ -56,3 +56,37 @@ $HOME/.npm in the shell PATH.
 
 For package version update, use `nix flake update`
 Otherwise for general changes, use `os-update`
+
+## Clean USB
+
+1. First, identify the USB drive device name (e.g., /dev/sdb) using a command like:
+
+```
+lsblk
+```
+
+2. Unmount any partition on the USB drive:
+
+```
+sudo umount /dev/sd{X}
+```
+
+> Replace the {x} with letter of the correspondent USB drive. 3. Use the `dd` command to overwrite the drive with zeros:
+
+```
+sudo dd if=/dev/zero of=/dev/sd{x} bs=4M status=progress
+```
+
+> This will erase the data on the drive. 4. After the process complete you can create a new partition:
+
+```
+sudo fdisk /dev/sd{x}
+```
+
+- Press 'o' to create a new empty DOS partition table, then 'w' to write the changes and exit.
+
+5. Finally you can format the drive with a new filesystem:
+
+```
+sudo mkfs.vfat /dev/sd{x}
+```
