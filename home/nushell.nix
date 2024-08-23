@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ config, lib, pkgs, ... }: {
   programs.zoxide = {
     enable = true;
     enableNushellIntegration = true;
@@ -27,13 +22,20 @@
       node-open = "nix-shell ~/.nixos_config/shell.node.nix";
       gleam-open = "nix-shell ~/.nixos_config/shell.gleam.nix";
       rust-open = "nix-shell ~/.nixos_config/shell.rust.nix";
-      /*
-      nixos-cleanup = "nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory|/proc)\"";
-      */
+      # nixos-cleanup = "nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory|/proc)\"";
       ls = "eza -l --hyperlink --header";
       cd = "z";
       exit-pd = "podman stop --all";
     };
+    extraConfig = ''
+      ^ssh-agent -c
+          | lines
+          | first 2
+          | parse "setenv {name} {value};"
+          | transpose -r
+          | into record
+          | load-env
+    '';
     extraEnv = ''
       $env.config.hooks = {
         env_change : {PWD : { || if (which direnv | is-empty) { return }
