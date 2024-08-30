@@ -13,13 +13,13 @@
     erlang-ls
     elixir-ls # Elixir
     marksman # Markdown
+    markdownlint-cli2
     ltex-ls
     texlab # LaTeX
     taplo # Toml
     postgres-lsp
     shfmt
     pgformatter
-    markdownlint-cli
     nodePackages.bash-language-server # Bash
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.vscode-langservers-extracted
