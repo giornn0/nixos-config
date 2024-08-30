@@ -71,13 +71,17 @@ lsblk
 sudo umount /dev/sd{X}
 ```
 
-> Replace the {x} with letter of the correspondent USB drive. 3. Use the `dd` command to overwrite the drive with zeros:
+> Replace the {x} with letter of the correspondent USB drive.
+
+3. Use the `dd` command to overwrite the drive with zeros:
 
 ```
 sudo dd if=/dev/zero of=/dev/sd{x} bs=4M status=progress
 ```
 
-> This will erase the data on the drive. 4. After the process complete you can create a new partition:
+> This will erase the data on the drive.
+
+4. After the process complete you can create a new partition:
 
 ```
 sudo fdisk /dev/sd{x}
