@@ -1,5 +1,5 @@
-{config, ...}: let
-  home_directory = "/home/giornn0";
+{ config, ... }:
+let home_directory = "/home/giornn0";
 in {
   home.file.".config/wleave/layout".text = ''
     {
@@ -34,7 +34,7 @@ in {
     }
     {
         "label" : "reboot",
-        "action" : "systemctl reboot",
+        "action" : "podman stop --all && systemctl reboot",
         "text" : "Reboot",
         "keybind" : "r"
     }
