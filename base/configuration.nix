@@ -1,13 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+{ config, lib, pkgs, ... }:
+let tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
 in {
   imports = [
     # Include the results of the hardware scan.
@@ -72,7 +67,7 @@ in {
   # Configure console keymap
   console.keyMap = "la-latin1";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -146,14 +141,12 @@ in {
     wlr.enable = true;
     xdgOpenUsePortal = true;
     config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
+      common.default = [ "gtk" ];
+      hyprland.default = [ "hyprland" "gtk" ];
     };
 
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
   };
 
   # This value determines the NixOS release from which the default
@@ -168,7 +161,9 @@ in {
   virtualisation.podman.dockerCompat = true;
   virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
 
+  ##INFO: Netbird VPN
+  #services.netbird.enable = true;
+
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-    ];
+    builtins.elem (lib.getName pkg) [ ];
 }

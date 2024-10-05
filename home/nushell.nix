@@ -45,6 +45,8 @@
       $env.config = ($env.config | upsert show_banner false)
       $env.EDITOR = "nvim";
       $env.BROWSER = "firefox";
+      $env.CHROME_BIN = "brave";
+      $env.CHROMIUM_BIN = "brave";
       $env.TERMINAL = "alacritty";
       $env.PATH = ($env.PATH | split row (char esep)
           | append '${config.home.homeDirectory}/.cargo/bin'
