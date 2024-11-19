@@ -24,17 +24,17 @@
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.vscode-langservers-extracted
     nodePackages.stylelint
-    nodePackages.graphql-language-service-cli
     #INFO: This are installed globally or
-    #through nix-shell with lorry daemon
+    # through nix-shell with lorry daemon
     # nodePackages.svelte-language-server # Svelte
     # nodePackages.typescript
     # nodePackages.typescript-language-server
     # nodePackages."@vtsls/language-server"
     # nodePackages."@angular/language-server"
-    eslint_d
-    nodePackages.prettier
-    biome
+    # eslint_d
+    # nodePackages.prettier
+    # biome
+    # nodePackages.graphql-language-service-cli
     nodePackages.yaml-language-server # YAML / JSON
     yamllint
     yamlfmt
@@ -50,8 +50,6 @@
     zls
     #TODO: Pending to look for an auto install of rust-analyzer
     # rust-analyzer
-    #
-    luajitPackages.luarocks
     #Haskell
     haskellPackages.haskell-language-server
     haskellPackages.cabal-gild
