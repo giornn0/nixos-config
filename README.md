@@ -46,7 +46,8 @@ npm config set prefix $HOME/.npm
 After that you will be able to install packages with -g flag.
 
 ```
-npm -g @angular/language-server
+npm i -g @angular/language-server @vtsls/language-server
+//maybe there is no need for these two typescript-language-server typescript
 ```
 
 The possible command will be available because there is already configured the directory
