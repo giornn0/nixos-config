@@ -16,9 +16,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland.override{
-        legacyRenderer = true;
-        mesa = pkgs.mesa;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland.override {
+      legacyRenderer = true;
+      mesa = pkgs.mesa;
     };
     extraConfig = ''
       ########################################################################################
@@ -251,8 +251,10 @@
 
           #Clean middle click paste (check how to allow the new tab)
           bind = , mouse:274, exec, ;
+
+          # Netbird VPN connection
+          bind = SUPER ALT, V, exec, netbird_connect
     '';
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   # ......
 }

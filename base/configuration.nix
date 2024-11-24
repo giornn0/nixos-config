@@ -41,6 +41,12 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    # Allow Netbird ports
+    allowedTCPPorts = [ 51820 ];
+    allowedUDPPorts = [ 51820 ];
+  };
 
   # Set your time zone.
   time.timeZone = "America/Argentina/Buenos_Aires";
@@ -162,7 +168,7 @@ in {
   virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
 
   ##INFO: Netbird VPN
-  #services.netbird.enable = true;
+  services.netbird.enable = true; # for netbird service & CLI
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ ];

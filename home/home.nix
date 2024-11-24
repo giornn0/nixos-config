@@ -13,6 +13,8 @@ in {
     (import ./scripts.nix { inherit config lib pkgs; })
     (import ./rofi/default.nix { inherit config lib pkgs; })
     (import ./starship.nix { inherit config lib pkgs; })
+    #Shells Apps
+    (import ./shell_apps/default.nix { inherit config lib pkgs; })
   ];
   # TODO please change the username & home direcotry to your own
   home.username = userName;
