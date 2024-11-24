@@ -171,12 +171,21 @@ in {
   services.netbird.enable = true; # for netbird service & CLI
   environment.systemPackages = with pkgs; [
     netbird
+    cacert
     (writeShellScriptBin "netbird_connect_eiva" ''
       # Ensure proper Wayland/X11 environment
-
-        sudo ${netbird}/bin/netbird up --management-url https://vpn.eiva.com.ar:443
-        # sudo ${netbird}/bin/netbird up -F -l debug --management-url https://vpn.eiva.com.ar:443
+      sudo ${netbird}/bin/netbird up --management-url https://vpn.eiva.com.ar:443
+      # sudo ${netbird}/bin/netbird up -F -l debug --management-url https://vpn.eiva.com.ar:443
     '')
+  ];
+  # Enable certificate management
+  security.pki.certificates = [
+    # Add any specific certificates if needed
+  ];
+  # Trust Mozilla's certificate store
+  security.pki.certificateFiles = [
+    "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+    "../certs/need_for_eiva.crt"
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg:
