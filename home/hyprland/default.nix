@@ -252,8 +252,6 @@
           #Clean middle click paste (check how to allow the new tab)
           bind = , mouse:274, exec, ;
 
-          # Netbird VPN connection
-          bind = $mainMod SHIFT, V, exec, netbird_connect_eiva
     '';
   };
   # ......

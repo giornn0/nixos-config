@@ -26,6 +26,9 @@
       ls = "eza -l --hyperlink --header";
       cd = "z";
       exit-pd = "podman stop --all";
+      netbird-eiva =
+        # "sudo bash -c 'GRPC_GO_LOG_VERBOSITY_LEVEL=99 GRPC_GO_LOG_SEVERITY_LEVEL=info netbird up -F -l debug'";
+        "sudo netbird up -m https://vpn.eiva.com.ar:443";
     };
     extraConfig = ''
       ^ssh-agent -c
