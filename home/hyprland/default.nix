@@ -253,7 +253,7 @@
           bind = , mouse:274, exec, ;
 
           # Netbird VPN connection
-          bind = SUPER ALT, V, exec, netbird_connect
+          bind = $mainMod SHIFT, V, exec, netbird_connect_eiva
     '';
   };
   # ......

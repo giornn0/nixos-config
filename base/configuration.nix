@@ -171,13 +171,11 @@ in {
   services.netbird.enable = true; # for netbird service & CLI
   environment.systemPackages = with pkgs; [
     netbird
-    (writeShellScriptBin "netbird_connect" ''
-      # Ensure XDG environment variables are set
-      # export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-      # export DISPLAY=:0
-      # export WAYLAND_DISPLAY=wayland-1
+    (writeShellScriptBin "netbird_connect_eiva" ''
+      # Ensure proper Wayland/X11 environment
 
-      ${netbird}/bin/netbird up
+        sudo ${netbird}/bin/netbird up --management-url https://vpn.eiva.com.ar:443
+        # sudo ${netbird}/bin/netbird up -F -l debug --management-url https://vpn.eiva.com.ar:443
     '')
   ];
 
