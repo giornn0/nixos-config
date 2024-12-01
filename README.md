@@ -29,6 +29,12 @@ After setting up all the files run:
 sudo nixos-rebuild switch
 ```
 
+You can create easily some basic folders:
+
+```
+mkdir ~/Documents && mkdir ~/Downloads
+```
+
 If everything runs fine, you can run the cmd: `os-update` whenever you want to change the configuration
 
 ## Hyprland
