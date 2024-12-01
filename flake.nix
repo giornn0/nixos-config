@@ -1,18 +1,18 @@
 {
   description = "Giornn0's Flake Configuration";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # neovim-flake.url = "github:neovim/neovim?dir=contrib";
-    neovim-nightly-overlay=  {
-url = "github:nix-community/neovim-nightly-overlay";
-     # inputs.nixpkgs.follows = "nixpkgs";
-# inputs.neovim-flake.url = "github:neovim/neovim?dir=contrib&rev=8b98642002d0506d20628683958cb5c97a0dad80"; 
-};
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      # inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.neovim-flake.url = "github:neovim/neovim?dir=contrib&rev=8b98642002d0506d20628683958cb5c97a0dad80"; 
+    };
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
