@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ config, lib, pkgs, ... }: {
   programs.adb.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -12,10 +7,8 @@
     isNormalUser = true;
     description = "giornn0";
     shell = pkgs.nushell;
-    extraGroups = ["networkmanager" "wheel" "adbusers" "kvm" "plugdev"];
-    packages = with pkgs; [
-      firefox
-    ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm" "plugdev" ];
+    packages = with pkgs; [ firefox ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -26,7 +19,7 @@
     curl
     # hyprpaper
     wl-clipboard
-    gnome.nautilus
+    nautilus
   ];
 
   # ......
