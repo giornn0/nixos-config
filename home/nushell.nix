@@ -23,6 +23,8 @@
       gleam-open = "nix-shell ~/.nixos_config/shell.gleam.nix";
       rust-open = "nix-shell ~/.nixos_config/shell.rust.nix";
       # nixos-cleanup = "nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory|/proc)\"";
+      netbird-clean =
+        "sudo rm -rf /var/lib/netbird /etc/netbird /usr/local/bin/netbird";
       ls = "eza -l --hyperlink --header";
       cd = "z";
       exit-pd = "podman stop --all";
