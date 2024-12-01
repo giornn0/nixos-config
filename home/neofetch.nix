@@ -720,7 +720,7 @@
     #
     # Default: '~/.cache/thumbnails/neofetch'
     # Values:  'dir'
-    thumbnail_dir="~/.nixos_config/joi.png"
+    # thumbnail_dir="~/.nixos_config/free_palestine.png"
 
     # Crop mode
     #
@@ -739,7 +739,7 @@
     # Values:   'northwest', 'north', 'northeast', 'west', 'center'
     #           'east', 'southwest', 'south', 'southeast'
     # Flag:     --crop_offset
-    # crop_offset="west"
+    # crop_offset="center"
 
     # Image size
     # The image is half the terminal width by default.
@@ -748,7 +748,7 @@
     # Values:  'auto', '00px', '00%', 'none'
     # Flags:   --image_size
     #          --size
-    image_size="33%"
+    image_size="28%"
 
     # Catimg block size.
     # Control the resolution of catimg.
@@ -756,7 +756,7 @@
     # Default: '2'
     # Values:  '1', '2'
     # Flags:   --catimg_size
-    catimg_size="2"
+    catimg_size="1"
 
     # Gap between image and text
     #
@@ -781,7 +781,7 @@
     # Default:
     # Values:  'color', 'blue'
     # Flag:    --bg_color
-    # background_color= "blue"
+    # background_color= "green"
 
 
     # Misc Options
