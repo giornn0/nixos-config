@@ -96,7 +96,7 @@ in {
   # networking.firewall.enable = false;
 
   #INFO: Need for Hyprland
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     # if you also want 32-bit support (e.g for Steam)
     # driSupport32Bit = true;
@@ -129,7 +129,7 @@ in {
     TTYVTDisallocate = true;
   };
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

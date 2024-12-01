@@ -112,9 +112,9 @@ in {
     remmina
 
     #CLI
-    nodejs-slim
-    nodePackages.pnpm
-    nodePackages.npm
+    # nodejs-slim
+    # nodePackages.pnpm
+    # nodePackages.npm
 
     rustup
     lazygit
