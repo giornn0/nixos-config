@@ -17,11 +17,12 @@
       upgrade = "sudo nixos-rebuild switch --upgrade-all";
       flake-upgrade = "sudo nix flake update";
       nixos-optimise = "nix-store --optimise";
-      php-open = "nix-shell ~/.nixos_config/shell.php.nix";
-      android-open = "nix-shell ~/.nixos_config/shell.android.nix";
-      node-open = "nix-shell ~/.nixos_config/shell.node.nix";
-      gleam-open = "nix-shell ~/.nixos_config/shell.gleam.nix";
-      rust-open = "nix-shell ~/.nixos_config/shell.rust.nix";
+      android-open = "nix-shell ~/.nixos_config/shells/shell.android.nix";
+      angular-open = "nix-shell ~/.nixos_config/shells/shell.angular.nix";
+      gleam-open = "nix-shell ~/.nixos_config/shells/shell.gleam.nix";
+      node-open = "nix-shell ~/.nixos_config/shells/shell.node.nix";
+      php-open = "nix-shell ~/.nixos_config/shells/shell.php.nix";
+      rust-open = "nix-shell ~/.nixos_config/shells/shell.rust.nix";
       # nixos-cleanup = "nix-store --gc --print-roots | egrep -v \"^(/nix/var|/run/\w+-system|\{memory|/proc)\"";
       netbird-clean =
         "sudo rm -rf /var/lib/netbird /etc/netbird /usr/local/bin/netbird";
