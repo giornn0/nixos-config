@@ -4,27 +4,27 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules =
-    [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/dfc8578a-cd43-4113-8295-e8a87a0eb3f6";
-    fsType = "ext4";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/474bfe0c-ba5e-47f0-b1ba-e6c94c2c2e6c";
+      fsType = "ext4";
+    };
 
-  boot.initrd.luks.devices."luks-3f852ec4-fb05-40fd-96ef-324a0082e1a6".device =
-    "/dev/disk/by-uuid/3f852ec4-fb05-40fd-96ef-324a0082e1a6";
+  boot.initrd.luks.devices."luks-fdf9aae2-c4de-42c1-a25b-9cce2353b6e3".device = "/dev/disk/by-uuid/fdf9aae2-c4de-42c1-a25b-9cce2353b6e3";
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/96E3-8574";
-    fsType = "vfat";
-    options = [ "fmask=0077" "dmask=0077" ];
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/96E3-8574";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
   swapDevices = [ ];
 
@@ -36,6 +36,5 @@
   # networking.interfaces.enp7s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

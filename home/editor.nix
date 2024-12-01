@@ -22,23 +22,10 @@
     pgformatter
     nodePackages.bash-language-server # Bash
     nodePackages.dockerfile-language-server-nodejs
-    nodePackages.vscode-langservers-extracted
     nodePackages.stylelint
-    #INFO: This are installed globally or
-    # through nix-shell with lorry daemon
-    # nodePackages.svelte-language-server # Svelte
-    # nodePackages.typescript
-    # nodePackages.typescript-language-server
-    # nodePackages."@vtsls/language-server"
-    # nodePackages."@angular/language-server"
-    # eslint_d
-    # nodePackages.prettier
-    # biome
-    # nodePackages.graphql-language-service-cli
     nodePackages.yaml-language-server # YAML / JSON
     yamllint
     yamlfmt
-    tailwindcss-language-server
     lua-language-server # LUA
     stylua
     selene

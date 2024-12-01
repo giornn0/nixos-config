@@ -111,11 +111,6 @@ in {
     #INFO: For RDP
     remmina
 
-    #CLI
-    # nodejs-slim
-    # nodePackages.pnpm
-    # nodePackages.npm
-
     rustup
     lazygit
     #Zig
