@@ -7,7 +7,8 @@
     isNormalUser = true;
     description = "giornn0";
     shell = pkgs.nushell;
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm" "plugdev" ];
+    extraGroups =
+      [ "networkmanager" "wheel" "adbusers" "kvm" "plugdev" "podman" ];
     packages = with pkgs; [ firefox ];
   };
 
