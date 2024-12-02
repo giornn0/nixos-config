@@ -165,9 +165,17 @@ in {
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
-  virtualisation.podman.enable = true;
-  virtualisation.podman.dockerCompat = true;
-  virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
+  # Enable common container config files in /etc/containers
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   ##INFO: Netbird VPN
   services.netbird.enable = true; # for netbird service & CLI
