@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   # ......
   #INFO: Utils
   imports = [
@@ -17,8 +17,8 @@
     enable = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland.override {
-      legacyRenderer = true;
-      mesa = pkgs.mesa;
+      # legacyRenderer = true;
+      # mesa = pkgs.mesa;
     };
     extraConfig = ''
       ########################################################################################
@@ -56,7 +56,7 @@
 
           #Startup
           exec-once = swww init & sleep 0.5 && exec wallpaper_random
-          exec-once = waybar & firefox
+          exec-once = waybar & brave
 
 
           # Source a file (multi-file configs)
@@ -157,15 +157,15 @@
           # }
 
           # Example windowrule v1
-          # windowrule = float, ^(kitty)$
+          # windowrule = float, ^(ghostty)$
           # Example windowrule v2
-          # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+          # windowrulev2 = float,class:^(ghostty)$,title:^(ghostty)$
 
-          # windowrule=float,^(kitty)$
+          # windowrule=float,^(ghostty)$
           # windowrule=float,^(pavucontrol)$
-          # windowrule=center,^(kitty)$
+          # windowrule=center,^(ghostty)$
           # windowrule=float,^(blueman-manager)$
-          # windowrule=size 600 500,^(kitty)$
+          # windowrule=size 600 500,^(ghostty)$
           # windowrule=size 934 525,^(mpv)$
           # windowrule=float,^(mpv)$
           # windowrule=center,^(mpv)$
@@ -181,14 +181,14 @@
           $mainMod = SUPER
           bind = $mainMod, G, fullscreen,
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-          bind = $mainMod, Q, exec, kitty
+          bind = $mainMod, Q, exec, ghostty 
           bind = $mainMod, C, killactive,
           bind = $mainMod, M, exit,
           bind = $mainMod, E, exec, nautilus
           bind = $mainMod, V, togglefloating,
           bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, O, togglesplit, # dwindle
-          bind = $mainMod, I, exec, firefox # internet
+          bind = $mainMod, I, exec, brave # internet
           bind = $mainMod, X, exec, wleave # session
           bind = $mainMod, T, exec, wofi --show drun
           bind = $mainMod, R, exec, rofiWindow

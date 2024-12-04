@@ -15,14 +15,10 @@
     # wlroots
 
     #Possible need it to allow full screen sharing
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
     wl-screenrec
     #Log out
     wleave
-
-    #XDG Desktop
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
 
     #Audio
     pamixer

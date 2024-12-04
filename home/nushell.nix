@@ -43,20 +43,14 @@
           | load-env
     '';
     extraEnv = ''
-      $env.config.hooks = {
-        env_change : {PWD : { || if (which direnv | is-empty) { return }
-            direnv export json | from json | default {} | load-env
-        }}
-      };
       $env.config = ($env.config | upsert show_banner false)
       $env.EDITOR = "nvim";
-      $env.BROWSER = "firefox";
+      $env.BROWSER = "brave";
       $env.CHROME_BIN = "brave";
       $env.CHROMIUM_BIN = "brave";
       $env.TERMINAL = "alacritty";
       $env.PATH = ($env.PATH | split row (char esep)
           | append '${config.home.homeDirectory}/.cargo/bin'
-          | append '${config.home.homeDirectory}/.npm/bin'
           | uniq);
       neofetch
     '';

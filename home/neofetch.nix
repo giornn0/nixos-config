@@ -616,7 +616,7 @@
     #           'viu'
 
     # Flag:     --backend
-    image_backend="kitty"
+    image_backend="viu"
 
     # Image Source
     #
@@ -630,7 +630,7 @@
     # NOTE: 'auto' will pick the best image source for whatever image backend is used.
     #       In ascii mode, distro ascii art will be used and in an image mode, your
     #       wallpaper will be used.
-    image_source="/home/giornn0/.nixos_config/filistine.png"
+    image_source="/home/giornn0/.nixos_config/filistin.png"
 
 
     # Ascii Options

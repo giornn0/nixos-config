@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-}: {
+{ config, lib, pkgs, }: {
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
@@ -13,8 +9,9 @@
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
-      format = "[](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch[](fg:#FCA17D bg:#86BBD8)$c$elixir$elm$golang$gradle$haskell$java$julia$nodejs$nim$rust$scala[](fg:#86BBD8 bg:#06969A)$docker_context[](fg:#06969A bg:#33658A)$time$memory_usage[](fg:#33658A bg:#FCA17D)[](fg:#FCA17D bg:#9A348E)$cmd_duration[ ](fg:#9A348E)
-  $character";
+      format = ''
+        [](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch[](fg:#FCA17D bg:#86BBD8)$c$elixir$elm$golang$gradle$haskell$java$julia$nodejs$nim$rust$scala[](fg:#86BBD8 bg:#06969A)$docker_context[](fg:#06969A bg:#33658A)$time$memory_usage[](fg:#33658A bg:#FCA17D)[](fg:#FCA17D bg:#9A348E)$cmd_duration[ ](fg:#9A348E)
+          $character'';
       username = {
         show_always = true;
         style_user = "bg:#9A348E";
@@ -141,8 +138,9 @@
         format = "[ ♥ $time ]($style)";
       };
       character = {
-        success_symbol = "[➜](bold green)";
+        success_symbol = "[↳](bold green)";
         error_symbol = "[✗](bold red) ";
+        vimcmd_symbol = "[↦](bold green) ";
       };
       memory_usage = {
         format = " $symbol\${ram}( | \${swap})";

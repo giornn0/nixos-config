@@ -11,5 +11,7 @@ pkgs.mkShell {
     pnpm
     vtsls
     biome
+    nodePackages.stylelint
+    emmet-ls
   ];
 }

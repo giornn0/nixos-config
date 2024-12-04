@@ -3,5 +3,12 @@
 with pkgs;
 mkShell rec {
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ gleam erlang_27 rebar3 erlang-ls ];
+  buildInputs = [
+    elixir_1_18
+    #INFO: need for distillery builds
+    # gnumake
+    erlang_27
+    erlang-ls
+    elixir-ls # Elixir
+  ];
 }
