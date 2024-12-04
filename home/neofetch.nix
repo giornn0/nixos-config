@@ -630,7 +630,7 @@
     # NOTE: 'auto' will pick the best image source for whatever image backend is used.
     #       In ascii mode, distro ascii art will be used and in an image mode, your
     #       wallpaper will be used.
-    image_source="/home/giornn0/.nixos_config/free_palestine.png"
+    image_source="/home/giornn0/.nixos_config/filistine.png"
 
 
     # Ascii Options
@@ -720,7 +720,7 @@
     #
     # Default: '~/.cache/thumbnails/neofetch'
     # Values:  'dir'
-    # thumbnail_dir="~/.nixos_config/free_palestine.png"
+    # thumbnail_dir="~/.nixos_config/filistin.png"
 
     # Crop mode
     #
