@@ -53,7 +53,6 @@
       $env.TERMINAL = "alacritty";
       $env.PATH = ($env.PATH | split row (char esep)
           | append '${config.home.homeDirectory}/.cargo/bin'
-          | append '${config.home.homeDirectory}/.npm/bin'
           | uniq);
       neofetch
     '';
