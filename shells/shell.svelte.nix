@@ -7,6 +7,7 @@ mkShell rec {
     nodejs-slim_22
     nodePackages.npm
     bun
-    # nodePackages.eas-cli
+    svelte-language-server
+    tailwindcss-language-server
   ];
 }
