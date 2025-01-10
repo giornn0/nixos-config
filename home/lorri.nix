@@ -1,14 +1,12 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ config, lib, pkgs, ... }: {
   # ......
   services.lorri.enable = true;
-  programs.direnv = {
-    enable = true;
-  };
+  programs.direnv = { enable = true; };
+  #INFO: How to use:
+  #lorri init
+  # - Copy the shell content (that it's saved in shells folder from this repo) into the created shell.nix file 
+  #lorri watch - posible you will have to first enable direnv for the folder
+  #- Wait for the build to complete, and you will have a development environment
 
   # ......
 }
