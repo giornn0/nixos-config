@@ -114,17 +114,7 @@ in {
     lazygit
     #Zig
     zig
-    #Elixir
-    gleam
-    elixir
-    erlang
-    #INFO: need for distillery builds
-    # gnumake
     inotify-tools
-    #Haskell
-    ghc # Glasgow Haskell Compiler
-    haskellPackages.cabal-install
-    # haskellPackages.ghcup
     #INFO: Extras needs
     mold
     livebook
