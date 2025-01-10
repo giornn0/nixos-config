@@ -4,10 +4,10 @@ in {
   imports = [
     ./hyprland/default.nix
     ./themes/default.nix
-    (import ./alacritty.nix { inherit config lib pkgs; })
     (import ./editor.nix { inherit config lib pkgs inputs; })
     (import ./ghostty.nix { inherit config lib pkgs inputs; })
     (import ./helix.nix { inherit config lib pkgs; })
+    (import ./kitty.nix { inherit config lib pkgs; })
     (import ./lorri.nix { inherit config lib pkgs; })
     (import ./neofetch.nix { inherit config lib pkgs; })
     (import ./nushell.nix { inherit config lib pkgs; })
