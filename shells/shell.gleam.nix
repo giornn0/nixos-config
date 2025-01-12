@@ -3,5 +3,5 @@
 with pkgs;
 mkShell rec {
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ gleam erlang rebar3 erlang-ls ];
+  buildInputs = [ gleam erlang_27 rebar3 erlang-ls ];
 }

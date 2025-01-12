@@ -7,7 +7,7 @@ mkShell rec {
     elixir
     #INFO: need for distillery builds
     # gnumake
-    erlang
+    erlang_27
     erlang-ls
     elixir-ls # Elixir
   ];
