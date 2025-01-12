@@ -111,7 +111,6 @@ in {
     #INFO: For RDP
     remmina
 
-    rustup
     lazygit
     #Zig
     zig
