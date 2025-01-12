@@ -7,7 +7,7 @@
       foreground = "f8f8f2";
       background = "000000";
       font-family = "FiraCode Nerd Font";
-      font-size = 16;
+      font-size = 14;
       cursor-style-blink = true;
       term = "256color";
       background-opacity = 0.8;
