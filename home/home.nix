@@ -57,11 +57,9 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     #Some basic softwares
-    insomnia
     beekeeper-studio
-    telegram-desktop
+    hoppscotch
     #For android debugging
-    brave
     #Virtualization
     podman-compose
     # here is some command line tools I use frequently
