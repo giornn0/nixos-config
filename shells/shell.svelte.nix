@@ -9,5 +9,6 @@ mkShell rec {
     bun
     svelte-language-server
     tailwindcss-language-server
+    emmet-ls
   ];
 }

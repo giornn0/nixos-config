@@ -8,7 +8,6 @@
   # ......
   home.packages = with pkgs; [
     #Editor
-    lldb
     hadolint
     marksman # Markdown
     markdownlint-cli2
@@ -26,8 +25,6 @@
     lua-language-server # LUA
     stylua
     selene
-    emmet-ls
-    vimPlugins.crates-nvim
     haskellPackages.nixfmt
     nil
     tree-sitter

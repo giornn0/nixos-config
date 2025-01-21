@@ -3,6 +3,6 @@
 with pkgs;
 mkShell rec {
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ rustup openssl perl ];
+  buildInputs = [ rustup openssl perl vimPlugins.crates-nvim lldb ];
   PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
 }

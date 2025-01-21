@@ -8,6 +8,7 @@ mkShell rec {
     nodePackages.npm
     bun
     nodePackages.stylelint
+    emmet-ls
     # nodePackages.eas-cli
   ];
 }

@@ -4,7 +4,7 @@ with pkgs;
 mkShell rec {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
-    elixir
+    elixir_1_18
     #INFO: need for distillery builds
     # gnumake
     erlang_27
