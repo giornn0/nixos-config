@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   # ......
   #INFO: Utils
   imports = [
@@ -157,15 +157,15 @@
           # }
 
           # Example windowrule v1
-          # windowrule = float, ^(kitty)$
+          # windowrule = float, ^(ghostty)$
           # Example windowrule v2
-          # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+          # windowrulev2 = float,class:^(ghostty)$,title:^(ghostty)$
 
-          # windowrule=float,^(kitty)$
+          # windowrule=float,^(ghostty)$
           # windowrule=float,^(pavucontrol)$
-          # windowrule=center,^(kitty)$
+          # windowrule=center,^(ghostty)$
           # windowrule=float,^(blueman-manager)$
-          # windowrule=size 600 500,^(kitty)$
+          # windowrule=size 600 500,^(ghostty)$
           # windowrule=size 934 525,^(mpv)$
           # windowrule=float,^(mpv)$
           # windowrule=center,^(mpv)$
@@ -181,7 +181,7 @@
           $mainMod = SUPER
           bind = $mainMod, G, fullscreen,
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-          bind = $mainMod, Q, exec, kitty
+          bind = $mainMod, Q, exec, ghostty 
           bind = $mainMod, C, killactive,
           bind = $mainMod, M, exit,
           bind = $mainMod, E, exec, nautilus
