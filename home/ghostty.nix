@@ -6,11 +6,9 @@
     settings = {
       font-family = "FiraCode Nerd Font";
       cursor-style-blink = true;
-      # term = "-256color";
       fullscreen = true;
-      font-feature = "-ss20";
+      font-feature = [ "calt" "liga" "dlig" ];
       font-size = 13;
-      font-thicken = true;
 
       macos-titlebar-style = "hidden";
       window-decoration = false;
@@ -47,45 +45,45 @@
         cursor-color = "#19dfcf";
 
         palette = [
-          # "0=#45475a"
-          # "1=#f38ba8"
-          # "2=#a6e3a1"
-          # "3=#f9e2af"
-          # "4=#89b4fa"
-          # "5=#f5c2e7"
-          # "6=#94e2d5"
-          # "7=#bac2de"
-          # "8=#585b70"
-          # "9=#f38ba8"
-          # "10=#a6e3a1"
-          # "11=#f9e2af"
-          # "12=#89b4fa"
-          # "13=#f5c2e7"
-          # "14=#94e2d5"
-          # "15=#a6adc8"
-          "0=#0d1116"
-          "8=#5fa9f4"
-          # red
-          "1=#f16c75"
-          "9=#f16c75"
-          # green
-          "2=#37f499"
-          "10=#37f499"
-          # yellow
-          "3=#19dfcf"
-          "11=#19dfcf"
-          # blue
-          "4=#987afb"
-          "12=#987afb"
-          # purple
-          "5=#949ae5"
-          "13=#949ae5"
-          # aqua
-          "6=#04d1f9"
-          "14=#04d1f9"
-          # white
-          "7=#ebfafa"
-          "15=#ebfafa"
+          "0=#45475a"
+          "1=#f38ba8"
+          "2=#a6e3a1"
+          "3=#f9e2af"
+          "4=#89b4fa"
+          "5=#f5c2e7"
+          "6=#94e2d5"
+          "7=#bac2de"
+          "8=#585b70"
+          "9=#f38ba8"
+          "10=#a6e3a1"
+          "11=#f9e2af"
+          "12=#89b4fa"
+          "13=#f5c2e7"
+          "14=#94e2d5"
+          "15=#a6adc8"
+          # "0=#0d1116"
+          # "8=#5fa9f4"
+          # # red
+          # "1=#f16c75"
+          # "9=#f16c75"
+          # # green
+          # "2=#37f499"
+          # "10=#37f499"
+          # # yellow
+          # "3=#19dfcf"
+          # "11=#19dfcf"
+          # # blue
+          # "4=#987afb"
+          # "12=#987afb"
+          # # purple
+          # "5=#949ae5"
+          # "13=#949ae5"
+          # # aqua
+          # "6=#04d1f9"
+          # "14=#04d1f9"
+          # # white
+          # "7=#ebfafa"
+          # "15=#ebfafa"
         ];
         selection-background = "353749";
         selection-foreground = "cdd6f4";
