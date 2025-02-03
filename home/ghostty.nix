@@ -4,12 +4,14 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      font-family = "JetBrainsMono Nerd Font";
+      font-family = "Fira Code Nerd Font";
       cursor-style-blink = true;
       fullscreen = true;
-      font-feature = [ "calt" "liga" "dlig" ];
+      font-feature = [
+        "calt"
+        # "liga" "dlig" 
+      ];
       font-size = 13;
-
       macos-titlebar-style = "hidden";
       window-decoration = true;
       background-opacity = 0.75;
