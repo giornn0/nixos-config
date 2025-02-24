@@ -616,7 +616,7 @@
     #           'viu'
 
     # Flag:     --backend
-    image_backend="kitty"
+    image_backend="viu"
 
     # Image Source
     #
