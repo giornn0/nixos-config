@@ -8,7 +8,7 @@
       twemoji-color-font
       fira-code
       fira-code-symbols
-      fira-code-nerdfont
+      nerd-fonts.fira-code
       hack-font
       meslo-lgs-nf
       inconsolata

@@ -40,11 +40,6 @@
           | load-env
     '';
     extraEnv = ''
-      $env.config.hooks = {
-        env_change : {PWD : { || if (which direnv | is-empty) { return }
-            direnv export json | from json | default {} | load-env
-        }}
-      };
       $env.config = ($env.config | upsert show_banner false)
       $env.EDITOR = "nvim";
       $env.BROWSER = "firefox";

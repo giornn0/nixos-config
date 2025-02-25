@@ -18,27 +18,6 @@ in {
   home.username = userName;
   home.homeDirectory = "/home/${userName}";
 
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
-
-  # set cursor size and dpi for 4k monitor
-  #xresources.properties = {
-  #  "Xcursor.size" = 16;
-  # "Xft.dpi" = 172;
-  #};
-
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
@@ -71,7 +50,6 @@ in {
     zip
     xz
     unzip
-
     # utils
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
@@ -82,6 +60,8 @@ in {
     fd # A modern replacement for find
     git-cliff # A modern changelog prettier
     killport # An option to kill process on specific ports
+    htop
+    feh
     # misc
     file
     which
@@ -114,7 +94,6 @@ in {
     inotify-tools
     #INFO: Extras needs
     mold
-    livebook
   ];
   home.sessionVariables = {
     EDITOR = "nvim";
