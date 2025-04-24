@@ -17,8 +17,8 @@
     enable = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland.override {
-      legacyRenderer = true;
-      mesa = pkgs.mesa;
+      # legacyRenderer = true;
+      # mesa = pkgs.mesa;
     };
     extraConfig = ''
       ########################################################################################
