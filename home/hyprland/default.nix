@@ -56,7 +56,7 @@
 
           #Startup
           exec-once = swww init & sleep 0.5 && exec wallpaper_random
-          exec-once = waybar & firefox
+          exec-once = waybar & brave
 
 
           # Source a file (multi-file configs)
@@ -188,7 +188,7 @@
           bind = $mainMod, V, togglefloating,
           bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, O, togglesplit, # dwindle
-          bind = $mainMod, I, exec, firefox # internet
+          bind = $mainMod, I, exec, brave # internet
           bind = $mainMod, X, exec, wleave # session
           bind = $mainMod, T, exec, wofi --show drun
           bind = $mainMod, R, exec, rofiWindow

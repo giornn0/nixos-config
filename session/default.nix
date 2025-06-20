@@ -16,7 +16,7 @@
       # "podman"
       "docker"
     ];
-    packages = with pkgs; [ firefox ];
+    packages = with pkgs; [ brave ];
   };
 
   # List packages installed in system profile. To search, run:

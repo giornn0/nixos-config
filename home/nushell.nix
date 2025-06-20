@@ -42,7 +42,7 @@
     extraEnv = ''
       $env.config = ($env.config | upsert show_banner false)
       $env.EDITOR = "nvim";
-      $env.BROWSER = "firefox";
+      $env.BROWSER = "brave";
       $env.CHROME_BIN = "brave";
       $env.CHROMIUM_BIN = "brave";
       $env.TERMINAL = "alacritty";
