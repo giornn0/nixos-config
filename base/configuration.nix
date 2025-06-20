@@ -157,5 +157,4 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ ];
-  nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.1.5" ];
 }

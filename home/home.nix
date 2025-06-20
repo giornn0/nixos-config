@@ -35,7 +35,7 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     #Some basic softwares
-    beekeeper-studio
+    #beekeeper-studio
     hoppscotch
     #For android debugging
     #Virtualization
@@ -59,6 +59,7 @@ in {
     zoxide # A modern replacement for cd
     fd # A modern replacement for find
     git-cliff # A modern changelog prettier
+    killall # for rofi
     killport # An option to kill process on specific ports
     htop
     feh
@@ -98,7 +99,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "brave";
-    TERMINAL = "alacritty";
+    TERMINAL = "ghostty";
     NIX_BUILD_SHELL = "nu";
     __GL_VRR_ALLOWED = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
