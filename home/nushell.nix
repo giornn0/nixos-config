@@ -48,7 +48,7 @@
       $env.BROWSER = "brave";
       $env.CHROME_BIN = "brave";
       $env.CHROMIUM_BIN = "brave";
-      $env.TERMINAL = "alacritty";
+      $env.TERMINAL = "ghostty";
       $env.PATH = ($env.PATH | split row (char esep)
           | append '${config.home.homeDirectory}/.cargo/bin'
           | uniq);
