@@ -55,7 +55,8 @@
           exec-once = rm "$HOME/.cache/cliphist/db"   #it'll delete history at every restart
 
           #Startup
-          exec-once = swww init & sleep 0.5 && exec wallpaper_random
+          exec-once = exec swww-daemon
+          exec-once = exec wallpaper_random
           exec-once = waybar & brave
 
 
