@@ -20,5 +20,5 @@ with pkgs;
       gradle
     ];
     ANDROID_HOME = "${config.home.homeDirectory}/Android/Sdk";
-    # ANDROID_HOME = "/home/giornn0/Android/Sdk";
+    # ANDROID_HOME = "/home/giornnomobile/Android/Sdk";
   }

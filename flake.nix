@@ -34,7 +34,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.giornn0 = import ./home/home.nix;
+              home-manager.users.giornnomobile = import ./home/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
             }
           ];

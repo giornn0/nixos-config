@@ -1,5 +1,5 @@
 { config, ... }:
-let home_directory = "/home/giornn0";
+let home_directory = "/home/giornnomobile";
 in {
   home.file.".config/wleave/layout".text = ''
     {

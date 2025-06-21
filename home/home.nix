@@ -1,5 +1,5 @@
 { config, lib, pkgs, inputs, ... }:
-let userName = "giornn0";
+let userName = "giornnomobile";
 in {
   imports = [
     ./hyprland/default.nix
