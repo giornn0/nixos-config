@@ -2,7 +2,7 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    nodejs-slim_22
+    nodejs-slim_24
     angular-language-server
     tailwindcss-language-server
     typescript-language-server

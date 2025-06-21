@@ -4,7 +4,7 @@ with pkgs;
 mkShell rec {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
-    nodejs-slim_22
+    nodejs-slim_24
     nodePackages.npm
     bun
     nodePackages.stylelint
