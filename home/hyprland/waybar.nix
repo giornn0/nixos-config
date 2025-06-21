@@ -165,6 +165,7 @@
         "format-muted" = "󰖁 Muted";
         "format-icons" = { "default" = [ "" "" "" ]; };
         "on-click" = "pamixer -t";
+        "on-click-right" = "pavucontrol";
         "tooltip" = false;
       };
       "clock" = {

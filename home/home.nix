@@ -77,6 +77,10 @@ in {
     unetbootin
     krita
 
+    #INFO: For audio control on new devices
+    alsa-utils
+    pavucontrol
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`
