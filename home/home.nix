@@ -35,7 +35,7 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     #Some basic softwares
-    #beekeeper-studio
+    dbgate
     hoppscotch
     #For android debugging
     #Virtualization
