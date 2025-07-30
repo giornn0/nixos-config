@@ -74,7 +74,6 @@ in {
     gnupg
 
     #utils
-    unetbootin
     krita
 
     #INFO: For audio control on new devices
