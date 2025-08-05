@@ -4,6 +4,7 @@
 { config, lib, pkgs, ... }: {
   imports = [
     # Include the results of the hardware scan.
+    ./mobile-hardware.nix
     ./hardware-configuration.nix
     ./fonts.nix
     ./security.nix
