@@ -141,10 +141,10 @@
       modules-center = [ "clock" ];
       modules-right = [
         "pulseaudio"
-        "backlight"
         "memory"
         "cpu"
         "network"
+        "battery"
         "custom/powermenu"
         "tray"
       ];
@@ -218,6 +218,19 @@
       "tray" = {
         "icon-size" = 15;
         "spacing" = 5;
+      };
+      "battery" = {
+        "states" = {
+          "warning" = 30;
+          "critical" = 15;
+        };
+        "format" = "{icon} {capacity}%";
+        "format-charging" = "⚡{capacity}%";
+        "format-plugged" = "🔌 {capacity}%";
+        "format-alt" = "{time} {icon}";
+        "format-full" = "🔋 {capacity}%";
+        "format-critical" = "🪫 {capacity}%";
+        "format-warning" = "⚠︎ {capacity}%";
       };
     }];
   };
