@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   #INFO:
@@ -7,18 +7,57 @@
 
     boot.initrd.kernelModules = [ "amdgpu" ];
 
+    # Load the amdgpu driver for both Xorg and Wayland
     services.xserver.videoDrivers = [ "amdgpu" ];
 
-    hardware.graphics = {
+    #INFO:
+    # Enable Steam
+    programs.steam = {
       enable = true;
-      enable32Bit = true;
+      extraCompatPackages =
+        [ pkgs.proton-ge-bin ]; # Optional: Proton-GE for better compatibility
     };
 
-    hardware.amdgpu.initrd.enable = lib.mkDefault true;
+    hardware = {
+      graphics = {
+        enable = true;
+        enable32Bit = true;
+        extraPackages = with pkgs;
+          [
+            amdvlk # AMD's official Vulkan driver
+            # rocm-opencl-icd # OpenCL support
+            # rocm-runtime # ROCm runtime
+          ];
+      };
 
+      amdgpu.initrd.enable = true;
+      amdgpu.amdvlk = {
+        enable = true;
+        support32Bit.enable = true;
+      };
+    };
     #INFO:
     #SSD CONFIG
-    services.fstrim.enable = lib.mkDefault true;
+    services.fstrim.enable = true;
+
+    #INFO:
+    # Install essential gaming tools
+    environment.systemPackages = with pkgs; [
+      vulkan-tools # Vulkan utilities (vulkaninfo, etc.)
+      mangohud # Performance overlay
+      goverlay # GUI for MangoHud
+      gamemode # Optimizations for games
+    ];
+
+    nixpkgs.config.allowUnfree = true;
+    #INFO:
+    # Enable gamemode service
+    programs.gamemode.enable = true;
+
+    #INFO:
+    # Kernel parameters for AMD performance
+    boot.kernelParams =
+      [ "amdgpu.sg_display=0" ]; # Fixes issues on some ASUS laptops
   };
 
   #INFO:
